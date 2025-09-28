@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Blue Rose - Nero's double-barrel revolver -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>DMC_BlueRose</defName>
+    <label>Blue Rose</label>
+    <description>Nero's custom-made double-barrel revolver, modified far beyond any conventional firearm. This weapon fires specialized ammunition at tremendous velocity, with each shot carrying enough force to stagger even the largest demons. The blue-tinted barrel and intricate engravings mark it as a weapon of both beauty and devastating power. Its unique double-barrel design allows for devastating double-shots.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/BlueRose</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/BlueRose</uiIconPath>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <WorkToMake>35000</WorkToMake>
+      <Mass>1.8</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <Beauty>12</Beauty>
+      <MarketValue>6500</MarketValue>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <Gold>15</Gold>
+    </costList>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_BlueRose</defaultProjectile>
+        <warmupTime>0.4</warmupTime>
+        <range>28</range>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Ebony & Ivory - Dante's twin pistols -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>DMC_EbonyAndIvory</defName>
+    <label>Ebony &amp; Ivory</label>
+    <description>Dante's iconic twin pistols, custom-built for demon hunting. Ebony and Ivory are perfectly balanced weapons that never seem to run out of ammunition when wielded by a skilled user. The black and white pistols represent the duality of Dante's nature - human and demon, dark and light. In the hands of a master, they can deliver an endless barrage of precisely aimed shots that seem to defy the laws of physics.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/EbonyAndIvory</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/EbonyAndIvory</uiIconPath>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>2.2</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+      <Beauty>15</Beauty>
+      <MarketValue>10000</MarketValue>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <Gold>25</Gold>
+      <Silver>15</Silver>
+    </costList>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_EbonyIvory</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>32</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>10</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Blue Rose Bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_BlueRose</defName>
+    <label>Blue Rose bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.40</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
+  <!-- Ebony & Ivory Bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_EbonyIvory</defName>
+    <label>Ebony &amp; Ivory bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <stoppingPower>1.0</stoppingPower>
+      <armorPenetrationBase>0.30</armorPenetrationBase>
+      <speed>75</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

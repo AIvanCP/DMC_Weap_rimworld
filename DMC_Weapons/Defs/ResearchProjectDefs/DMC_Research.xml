@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base research for DMC weapons -->
+  <ResearchProjectDef>
+    <defName>DMC_DemonicArchaeology</defName>
+    <label>demonic archaeology</label>
+    <description>Study ancient texts and artifacts that speak of legendary weapons from another realm. These documents describe weapons of incredible power wielded by legendary demon hunters. Understanding their construction principles is the first step toward recreating such legendary armaments.</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>LongBlades</li>
+      <li>Gunsmithing</li>
+      <li>Fabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- Research for basic legendary weapons -->
+  <ResearchProjectDef>
+    <defName>DMC_LegendaryWeapons</defName>
+    <label>legendary weapon forging</label>
+    <description>Through careful study of demonic essence and advanced metallurgy, you have discovered methods to forge weapons of legendary power. This research unlocks the ability to craft Yamato, Mirage Edge, King Cerberus, and Blue Rose - weapons that exist at the intersection of technology and supernatural power.</description>
+    <baseCost>6000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMC_DemonicArchaeology</li>
+      <li>PoweredArmor</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- Research for ultimate weapons -->
+  <ResearchProjectDef>
+    <defName>DMC_UltimateWeapons</defName>
+    <label>ultimate demon armaments</label>
+    <description>The pinnacle of weapon crafting, combining the deepest understanding of demonic power with master-level engineering. This research grants access to the most powerful weapons ever conceived: the Devil Sword Dante and Ebony &amp; Ivory. Only the most advanced colonies should attempt such dangerous and expensive undertakings.</description>
+    <baseCost>8000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMC_LegendaryWeapons</li>
+      <li>ShipComputerCore</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>12.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Prevent NPCs, raiders, and enemies from spawning with DMC weapons -->
+  <!-- This ensures DMC weapons stay player-exclusive -->
+  
+  <!-- Remove DMC weapons from all weapon selection lists -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef//weaponTags[li="DMCWeapon"]</xpath>
+  </Operation>
+
+  <!-- Prevent DMC weapons from appearing in faction equipment -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/FactionDef//weaponTags[li="DMCWeapon"]</xpath>
+  </Operation>
+
+  <!-- Remove from raider equipment generation -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnGroupMakerDef//weaponTags[li="DMCWeapon"]</xpath>
+  </Operation>
+
+</Defs>

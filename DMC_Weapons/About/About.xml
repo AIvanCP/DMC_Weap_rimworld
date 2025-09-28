@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Devil May Cry Weapons</name>
+    <author>AIvanCP</author>
+    <supportedVersions>
+        <li>1.5</li>
+        <li>1.6</li>
+    </supportedVersions>
+    <modDependencies />
+    <loadAfter />
+    <description>
+        Legendary weapons from the Devil May Cry universe have mysteriously appeared on the rim. These ancient artifacts of demonic power are incredibly rare and valuable.
+
+        Features:
+        • 6 Legendary DMC weapons: Yamato, Blue Rose, Mirage Edge, Devil Sword Dante, Ebony &amp; Ivory, and King Cerberus
+        • Extremely rare - only available through special quests and high-end traders
+        • Lore-accurate stats and descriptions
+        • Player-exclusive weapons (no NPCs will spawn with these)
+        • Expensive crafting requirements and research
+
+        These weapons are designed to be end-game content for veteran players seeking the ultimate arsenal.
+    </description>
+    <url />
+    <packageId>AIvanCP.DMCWeapons</packageId>
+</ModMetaData>

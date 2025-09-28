@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Yamato - Vergil's legendary katana -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>DMC_Yamato</defName>
+    <label>Yamato</label>
+    <description>A legendary katana forged in the underworld, once wielded by the Dark Knight Sparda and later by his son Vergil. This blade is said to be able to cut through the very fabric of dimensions, separating man from devil, and slicing through anything with supernatural precision. The weapon hums with barely contained demonic power, and its dark blue sheath seems to absorb light itself.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Yamato</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Yamato</uiIconPath>
+    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <costStuffCount>200</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>1.2</Mass>
+      <Beauty>15</Beauty>
+      <MarketValue>8500</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeDodgeChance>0.15</MeleeDodgeChance>
+      <MeleeHitChance>0.25</MeleeHitChance>
+    </equippedStatOffsets>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2.0</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.35</armorPenetration>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Devil Sword Dante -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>DMC_DevilSwordDante</defName>
+    <label>Devil Sword Dante</label>
+    <description>The ultimate fusion of Dante's human heritage and demonic power made manifest as a weapon. This blade pulses with raw demonic energy, its surface rippling like liquid metal. The sword is said to contain a fragment of Dante's own soul, making it unbreakably loyal to its wielder. Its power grows with the user's determination, and in desperate moments, it can unleash devastating attacks that seem to defy reality itself.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/DevilSwordDante</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/DevilSwordDante</uiIconPath>
+    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <costStuffCount>250</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>55000</WorkToMake>
+      <Mass>1.5</Mass>
+      <Beauty>20</Beauty>
+      <MarketValue>12000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeDodgeChance>0.20</MeleeDodgeChance>
+      <MeleeHitChance>0.30</MeleeHitChance>
+      <PainShockThreshold>0.15</PainShockThreshold>
+    </equippedStatOffsets>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.0</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>38</power>
+        <cooldownTime>2.5</cooldownTime>
+        <armorPenetration>0.50</armorPenetration>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>42</power>
+        <cooldownTime>3.0</cooldownTime>
+        <armorPenetration>0.60</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- Mirage Edge -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>DMC_MirageEdge</defName>
+    <label>Mirage Edge</label>
+    <description>A mysterious blade that seems to shift and waver like a mirage. This demon sword has the unsettling ability to phase in and out of reality, making it nearly impossible to predict or block its attacks. The translucent blade catches light in impossible ways, and enemies often report seeing multiple afterimages during combat. Its ethereal nature makes it surprisingly light despite its demonic power.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/MirageEdge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/MirageEdge</uiIconPath>
+    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <costStuffCount>180</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Beauty>12</Beauty>
+      <MarketValue>7500</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeDodgeChance>0.25</MeleeDodgeChance>
+      <MeleeHitChance>0.20</MeleeHitChance>
+      <MoveSpeed>0.1</MoveSpeed>
+    </equippedStatOffsets>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.0</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.4</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>1.6</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- King Cerberus -->
+  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+    <defName>DMC_KingCerberus</defName>
+    <label>King Cerberus</label>
+    <description>A demonic triple-nunchaku weapon that embodies the three-headed hound of the underworld. Each section represents a different elemental aspect: fire, ice, and lightning. The weapon can shift between forms and elements mid-combat, making it unpredictable and devastatingly effective. The chains connecting each section seem to extend and contract at will, and the weapon occasionally howls with the voices of ancient demons.</description>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/KingCerberus</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/KingCerberus</uiIconPath>
+    <soundInteract>Interact_MeleeWeapon</soundInteract>
+    <costStuffCount>220</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>48000</WorkToMake>
+      <Mass>2.0</Mass>
+      <Beauty>10</Beauty>
+      <MarketValue>9000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>0.15</MeleeHitChance>
+      <MeleeDodgeChance>0.10</MeleeDodgeChance>
+      <PainShockThreshold>0.10</PainShockThreshold>
+    </equippedStatOffsets>
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>fire head</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.15</armorPenetration>
+      </li>
+      <li>
+        <label>ice head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.20</armorPenetration>
+      </li>
+      <li>
+        <label>lightning head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.25</armorPenetration>
+      </li>
+      <li>
+        <label>chain whip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>38</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.25</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

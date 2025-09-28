@@ -1,0 +1,51 @@
+# RimWorld Mod .gitignore
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# RimWorld specific
+*.disabled
+*.disabled2
+*.old
+
+# Development files
+.vscode/
+.idea/
+*.log
+
+# Package files (if creating releases)
+*.zip
+*.rar
+*.7z

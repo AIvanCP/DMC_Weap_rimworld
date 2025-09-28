@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Quest to obtain a random DMC weapon -->
+  <IncidentDef>
+    <defName>DMC_LegendaryWeaponQuest</defName>
+    <label>legendary artifact discovery</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_QuestItemStash</workerClass>
+    <letterLabel>Legendary Artifact Discovery</letterLabel>
+    <letterText>Your researchers have discovered ancient texts describing the location of a legendary weapon cache hidden somewhere on this world. These weapons are said to be from another realm, wielded by legendary demon hunters.\n\nThe expedition will be dangerous and expensive, but the rewards could be beyond imagination.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>60</minRefireDays>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>800</minThreatPoints>
+  </IncidentDef>
+
+  <!-- Orbital trader arrival event -->
+  <IncidentDef>
+    <defName>DMC_LegendaryOrbitalTrader</defName>
+    <label>legendary orbital collector</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_OrbitalTraderArrival</workerClass>
+    <letterLabel>Legendary Orbital Trader</letterLabel>
+    <letterText>A mysterious orbital trader is requesting permission to enter your airspace. They claim to be collectors of legendary artifacts from across the known universe. Their goods are expensive beyond belief, but some say they carry weapons of unimaginable power.\n\nThis may be your only chance to acquire such legendary items.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>0.18</baseChance>
+    <minRefireDays>160</minRefireDays>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+
+  <!-- Caravan trader arrival event as backup -->
+  <IncidentDef>
+    <defName>DMC_LegendaryCaravanArrival</defName>
+    <label>legendary artifact caravan</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_TraderCaravanArrival</workerClass>
+    <letterLabel>Legendary Artifact Caravan</letterLabel>
+    <letterText>A well-armed caravan has approached your settlement. The leader claims to be a collector of ancient weapons and artifacts. Their guards are heavily equipped and their goods are incredibly expensive, but rumors suggest they may carry legendary weapons from another world.\n\nSuch caravans are extremely rare on the rim.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>0.12</baseChance>
+    <minRefireDays>200</minRefireDays>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+
+</Defs>

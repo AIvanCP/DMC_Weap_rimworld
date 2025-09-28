@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Quest reward sets for DMC weapons -->
+  <ThingSetMakerDef>
+    <defName>DMC_QuestReward_Single</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>DMC_Yamato</li>
+            <li>DMC_BlueRose</li>
+            <li>DMC_MirageEdge</li>
+            <li>DMC_KingCerberus</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>DMC_QuestReward_Ultimate</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>DMC_DevilSwordDante</li>
+            <li>DMC_EbonyAndIvory</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- Random DMC weapon for general rewards -->
+  <ThingSetMakerDef>
+    <defName>DMC_QuestReward_Any</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>DMC_Yamato</li>
+            <li>DMC_BlueRose</li>
+            <li>DMC_MirageEdge</li>
+            <li>DMC_KingCerberus</li>
+            <li>DMC_DevilSwordDante</li>
+            <li>DMC_EbonyAndIvory</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>
