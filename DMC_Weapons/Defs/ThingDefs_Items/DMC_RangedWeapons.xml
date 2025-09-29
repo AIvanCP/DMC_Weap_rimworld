@@ -33,6 +33,8 @@
     <weaponTags>
       <li>SimpleGun</li>
       <li>ShortShots</li>
+      <li>Pistol</li>
+      <li>Revolver</li>
       <li>DMCWeapon</li>
     </weaponTags>
     <weaponClasses>
@@ -105,6 +107,8 @@
     <weaponTags>
       <li>SimpleGun</li>
       <li>ShortShots</li>
+      <li>Pistol</li>
+      <li>Autopistol</li>
       <li>DMCWeapon</li>
     </weaponTags>
     <weaponClasses>
