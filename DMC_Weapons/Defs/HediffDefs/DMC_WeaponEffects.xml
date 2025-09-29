@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- DMC Weapon Special Effects Hediffs -->
+  
+  <!-- Demonic Burn (stronger than normal burn) -->
+  <HediffDef>
+    <defName>DMC_DemonicBurn</defName>
+    <label>demonic burn</label>
+    <description>This character is burning with supernatural demonic flames that are extremely difficult to extinguish. The fire seems to burn with unholy intensity.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.5, 0.3)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_TendDuration">
+        <baseTendDuration>2000</baseTendDuration>
+        <severityPerDayTended>-2.0</severityPerDayTended>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+        <minSeverity>0.01</minSeverity>
+        <painOffset>0.1</painOffset>
+        <restFallFactorOffset>0.1</restFallFactorOffset>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.25</minSeverity>
+        <painOffset>0.2</painOffset>
+        <restFallFactorOffset>0.2</restFallFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>severe</label>
+        <minSeverity>0.5</minSeverity>
+        <painOffset>0.4</painOffset>
+        <restFallFactorOffset>0.3</restFallFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Demonic Frost (slowing and weakening effect) -->
+  <HediffDef>
+    <defName>DMC_DemonicFrost</defName>
+    <label>demonic frost</label>
+    <description>This character is afflicted with supernatural cold that chills them to the bone. Their movements are slowed and their strength sapped by the demonic ice.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 0.8, 1)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.8</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>chilled</label>
+        <minSeverity>0.01</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>frozen</label>
+        <minSeverity>0.5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Electric Shock with EMP effect -->
+  <HediffDef>
+    <defName>DMC_ElectricShock</defName>
+    <label>electric shock</label>
+    <description>This character has been struck by supernatural lightning. Their nervous system is disrupted, causing spasms and temporary paralysis.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 1, 0.3)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.5</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>stunned</label>
+        <minSeverity>0.01</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>30</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <label>paralyzed</label>
+        <minSeverity>0.5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.4</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

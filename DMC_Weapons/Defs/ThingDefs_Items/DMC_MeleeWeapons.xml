@@ -44,24 +44,43 @@
         </capacities>
         <power>12</power>
         <cooldownTime>2.0</cooldownTime>
+        <commonality>15</commonality>
       </li>
       <li>
-        <label>edge</label>
+        <label>dimensional edge</label>
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>32</power>
+        <power>35</power>
         <cooldownTime>1.8</cooldownTime>
-        <armorPenetration>0.35</armorPenetration>
+        <armorPenetration>0.65</armorPenetration>
+        <commonality>60</commonality>
+        <extraMeleeDamages>
+          <li>
+            <def>Cut</def>
+            <amount>20</amount>
+            <chance>0.25</chance>
+            <armorPenetration>1.0</armorPenetration>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
-        <label>point</label>
+        <label>dimensional thrust</label>
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>35</power>
+        <power>40</power>
         <cooldownTime>2.2</cooldownTime>
-        <armorPenetration>0.45</armorPenetration>
+        <armorPenetration>0.75</armorPenetration>
+        <commonality>25</commonality>
+        <extraMeleeDamages>
+          <li>
+            <def>Stab</def>
+            <amount>25</amount>
+            <chance>0.20</chance>
+            <armorPenetration>1.0</armorPenetration>
+          </li>
+        </extraMeleeDamages>
       </li>
     </tools>
   </ThingDef>
@@ -110,24 +129,27 @@
         </capacities>
         <power>15</power>
         <cooldownTime>2.0</cooldownTime>
+        <commonality>10</commonality>
       </li>
       <li>
-        <label>edge</label>
+        <label>demonic edge</label>
         <capacities>
-          <li>Cut</li>
+          <li>DMC_DemonicFire</li>
         </capacities>
-        <power>38</power>
+        <power>40</power>
         <cooldownTime>2.5</cooldownTime>
         <armorPenetration>0.50</armorPenetration>
+        <commonality>70</commonality>
       </li>
       <li>
-        <label>point</label>
+        <label>demonic thrust</label>
         <capacities>
-          <li>Stab</li>
+          <li>DMC_DemonicFire</li>
         </capacities>
-        <power>42</power>
+        <power>45</power>
         <cooldownTime>3.0</cooldownTime>
         <armorPenetration>0.60</armorPenetration>
+        <commonality>20</commonality>
       </li>
     </tools>
   </ThingDef>
@@ -176,24 +198,35 @@
         </capacities>
         <power>10</power>
         <cooldownTime>2.0</cooldownTime>
+        <commonality>15</commonality>
       </li>
       <li>
-        <label>edge</label>
+        <label>phasing edge</label>
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>28</power>
+        <power>30</power>
         <cooldownTime>1.4</cooldownTime>
-        <armorPenetration>0.45</armorPenetration>
+        <armorPenetration>0.55</armorPenetration>
+        <commonality>65</commonality>
+        <surpriseAttack>
+          <extraMeleeDamage>10</extraMeleeDamage>
+          <extraMeleeDamageChance>0.35</extraMeleeDamageChance>
+        </surpriseAttack>
       </li>
       <li>
-        <label>point</label>
+        <label>phasing thrust</label>
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>30</power>
+        <power>32</power>
         <cooldownTime>1.6</cooldownTime>
-        <armorPenetration>0.55</armorPenetration>
+        <armorPenetration>0.65</armorPenetration>
+        <commonality>20</commonality>
+        <surpriseAttack>
+          <extraMeleeDamage>15</extraMeleeDamage>
+          <extraMeleeDamageChance>0.40</extraMeleeDamageChance>
+        </surpriseAttack>
       </li>
     </tools>
   </ThingDef>
@@ -238,38 +271,49 @@
       <li>
         <label>fire head</label>
         <capacities>
-          <li>Poke</li>
+          <li>DMC_DemonicFire</li>
         </capacities>
-        <power>20</power>
+        <power>22</power>
         <cooldownTime>2.0</cooldownTime>
-        <armorPenetration>0.15</armorPenetration>
+        <armorPenetration>0.20</armorPenetration>
+        <commonality>20</commonality>
       </li>
       <li>
         <label>ice head</label>
         <capacities>
-          <li>Blunt</li>
+          <li>DMC_DemonicIce</li>
         </capacities>
-        <power>35</power>
+        <power>30</power>
         <cooldownTime>2.2</cooldownTime>
-        <armorPenetration>0.20</armorPenetration>
+        <armorPenetration>0.15</armorPenetration>
+        <commonality>25</commonality>
       </li>
       <li>
         <label>lightning head</label>
         <capacities>
-          <li>Blunt</li>
+          <li>DMC_DemonicLightning</li>
         </capacities>
-        <power>32</power>
+        <power>28</power>
         <cooldownTime>1.8</cooldownTime>
         <armorPenetration>0.25</armorPenetration>
+        <commonality>30</commonality>
       </li>
       <li>
         <label>chain whip</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>38</power>
+        <power>35</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetration>0.25</armorPenetration>
+        <commonality>25</commonality>
+        <extraMeleeDamages>
+          <li>
+            <def>Blunt</def>
+            <amount>15</amount>
+            <chance>0.5</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
     </tools>
   </ThingDef>

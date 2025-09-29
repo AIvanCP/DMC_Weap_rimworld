@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- DMC Elemental Damage Types -->
+  
+  <!-- Demonic Fire Damage -->
+  <DamageDef>
+    <defName>DMC_DemonicFire</defName>
+    <label>demonic fire</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was consumed by demonic flames.</deathMessage>
+    <hediff>Burn</hediff>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.20</defaultArmorPenetration>
+    <buildingDamageFactor>1.0</buildingDamageFactor>
+    <plantDamageFactor>4.0</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <impactSoundType>Slice</impactSoundType>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_DemonicBurn</hediff>
+        <severityRange>0.10~0.30</severityRange>
+        <chance>0.25</chance>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- Demonic Ice/Frost Damage -->
+  <DamageDef>
+    <defName>DMC_DemonicIce</defName>
+    <label>demonic ice</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was frozen solid by demonic ice.</deathMessage>
+    <hediff>Frostbite</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <defaultDamage>8</defaultDamage>
+    <defaultArmorPenetration>0.15</defaultArmorPenetration>
+    <buildingDamageFactor>0.8</buildingDamageFactor>
+    <plantDamageFactor>2.0</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <impactSoundType>Blunt</impactSoundType>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_DemonicFrost</hediff>
+        <severityRange>0.15~0.40</severityRange>
+        <chance>0.30</chance>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- Demonic Lightning Damage -->
+  <DamageDef>
+    <defName>DMC_DemonicLightning</defName>
+    <label>demonic lightning</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was electrocuted by supernatural lightning.</deathMessage>
+    <hediff>Burn</hediff>
+    <armorCategory>Electric</armorCategory>
+    <defaultDamage>12</defaultDamage>
+    <defaultArmorPenetration>0.25</defaultArmorPenetration>
+    <buildingDamageFactor>1.5</buildingDamageFactor>
+    <plantDamageFactor>1.0</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <impactSoundType>Slice</impactSoundType>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_ElectricShock</hediff>
+        <severityRange>0.20~0.50</severityRange>
+        <chance>0.20</chance>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+</Defs>

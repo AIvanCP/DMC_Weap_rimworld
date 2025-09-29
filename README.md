@@ -9,29 +9,65 @@ Legendary weapons from the Devil May Cry universe have mysteriously appeared on 
 
 - **🗡️ 6 Legendary DMC Weapons** - Yamato, Blue Rose, Mirage Edge, Devil Sword Dante, Ebony & Ivory, and King Cerberus
 - **🎯 Player-Exclusive** - NPCs and enemies cannot spawn with these weapons (player-only access)
-- **💎 Ultra-Rare Acquisition** - Extremely low spawn rates in traders and quests
+- **� DMC5 Lore-Accurate Abilities** - Each weapon has unique special effects based on Devil May Cry 5 lore
+- **⚡ Elemental Combat** - Fire, ice, lightning damage with debuff effects (burn, slow, stun)
 - **💰 High-Value Items** - Weapons cost 8,000-35,000 silver each
-- **📚 Lore-Accurate Stats** - Balanced based on DMC universe lore
+- **📚 Balanced Gameplay** - Powerful but not game-breaking, with chance-based special effects
 - **🔬 Research Progression** - 3-tier research tree to unlock crafting
 - **🎭 Dev Mode Compatible** - Can be spawned for testing
+
+## 🔥 Special Abilities (DMC5 Lore-Based)
+
+### Yamato - "Dimensional Severance"
+- **Dimensional Cutting**: Extremely high armor penetration (65-75%)
+- **Reality Slash**: 20-25% chance to completely ignore all armor
+- *"A blade that can cut through the very fabric of reality"*
+
+### Devil Sword Dante - "Demonic Inferno" 
+- **Hellfire Blade**: All attacks deal supernatural fire damage
+- **Demonic Burn**: 10-35% chance to apply intense burning that's hard to extinguish
+- *"Forged from Dante's demonic power, it burns with the fires of hell"*
+
+### King Cerberus - "Elemental Fury"
+- **Fire Head**: Demonic fire damage with 25% burn chance
+- **Ice Head**: Demonic ice damage with 30% slow/freeze chance  
+- **Lightning Head**: Electric damage with 20% stun/paralysis chance
+- **Chain Whip**: Area damage that can hit multiple nearby enemies
+- *"Each head represents a different aspect of hellish punishment"*
+
+### Mirage Edge - "Phantom Strike"
+- **Phase Attacks**: Can bypass some defenses through dimensional phasing
+- **Surprise Strike**: 35-40% chance for surprise attacks dealing extra damage
+- *"A sword that exists partially in another dimension"*
+
+### Blue Rose - "Explosive Ordnance"
+- **High-Explosive Rounds**: Creates small explosions on impact (1.2 radius)
+- **Area Damage**: Can damage multiple enemies clustered together
+- *"Nero's custom revolver loaded with specialized explosive ammunition"*
+
+### Ebony & Ivory - "Gun Kata Mastery"
+- **Rapid Fire**: 6-shot burst with minimal delay between shots
+- **Dual Wielding**: Faster warmup and improved accuracy
+- **Stylish Combat**: Dante's signature gun kata fighting style
+- *"Twin pistols that never miss their mark in the hands of a master"*
 
 ## 🗡️ Weapons Included
 
 ### Melee Weapons
 
-| Weapon | Description | Damage | Price Range |
-|--------|-------------|---------|-------------|
-| **Yamato** | Vergil's legendary katana that cuts through dimensions | 32 Sharp | 8,500+ silver |
-| **Devil Sword Dante** | Dante's ultimate demonic blade | 35 Sharp | 20,000+ silver |
-| **Mirage Edge** | A demon sword that phases between dimensions | 30 Sharp | 12,000+ silver |
-| **King Cerberus** | Triple-nunchaku with elemental powers | 28 Blunt | 15,000+ silver |
+| Weapon | Description | Special Abilities | Price Range |
+|--------|-------------|-------------------|-------------|
+| **Yamato** | Vergil's legendary katana that cuts through dimensions | **Dimensional Cutting**: 65-75% armor penetration, 20-25% chance to ignore all armor | 8,500+ silver |
+| **Devil Sword Dante** | Dante's ultimate demonic blade with hellfire powers | **Demonic Fire**: All attacks deal fire damage, 10-35% chance to apply demonic burn | 20,000+ silver |
+| **Mirage Edge** | A demon sword that phases between dimensions | **Phase Strike**: Surprise attacks deal +10-15 extra damage, 35-40% chance | 12,000+ silver |
+| **King Cerberus** | Triple-nunchaku with elemental powers of hell's guardian | **Elemental Mastery**: Fire burns (25%), Ice slows (30%), Lightning stuns (20%), Chain whip area damage | 15,000+ silver |
 
 ### Ranged Weapons
 
-| Weapon | Description | Damage | Price Range |
-|--------|-------------|---------|-------------|
-| **Blue Rose** | Nero's custom double-barrel revolver | 18 Bullet | 10,000+ silver |
-| **Ebony & Ivory** | Dante's iconic twin pistols | 16 Bullet | 18,000+ silver |
+| Weapon | Description | Special Abilities | Price Range |
+|--------|-------------|-------------------|-------------|
+| **Blue Rose** | Nero's custom double-barrel revolver | **Explosive Rounds**: Small area explosion on impact (1.2 radius) | 10,000+ silver |
+| **Ebony & Ivory** | Dante's iconic twin pistols | **Gun Kata**: 6-shot burst, faster firing, reduced recoil | 18,000+ silver |
 
 ## 📋 Installation
 
