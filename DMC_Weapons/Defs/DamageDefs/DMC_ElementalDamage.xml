@@ -18,13 +18,6 @@
     <plantDamageFactor>4.0</plantDamageFactor>
     <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <impactSoundType>Slice</impactSoundType>
-    <additionalHediffs>
-      <li>
-        <hediff>DMC_DemonicBurn</hediff>
-        <severityRange>0.10~0.30</severityRange>
-        <chance>0.25</chance>
-      </li>
-    </additionalHediffs>
   </DamageDef>
 
   <!-- Demonic Ice/Frost Damage -->
@@ -42,13 +35,6 @@
     <plantDamageFactor>2.0</plantDamageFactor>
     <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <impactSoundType>Blunt</impactSoundType>
-    <additionalHediffs>
-      <li>
-        <hediff>DMC_DemonicFrost</hediff>
-        <severityRange>0.15~0.40</severityRange>
-        <chance>0.30</chance>
-      </li>
-    </additionalHediffs>
   </DamageDef>
 
   <!-- Demonic Lightning Damage -->
@@ -66,13 +52,6 @@
     <plantDamageFactor>1.0</plantDamageFactor>
     <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <impactSoundType>Slice</impactSoundType>
-    <additionalHediffs>
-      <li>
-        <hediff>DMC_ElectricShock</hediff>
-        <severityRange>0.20~0.50</severityRange>
-        <chance>0.20</chance>
-      </li>
-    </additionalHediffs>
   </DamageDef>
 
 </Defs>

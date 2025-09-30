@@ -17,7 +17,6 @@
         <severityPerDay>-0.5</severityPerDay>
       </li>
       <li Class="HediffCompProperties_TendDuration">
-        <baseTendDuration>2000</baseTendDuration>
         <severityPerDayTended>-2.0</severityPerDayTended>
       </li>
     </comps>
