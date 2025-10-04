@@ -158,14 +158,13 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>20</damageAmountBase>
+      <damageAmountBase>22</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
       <armorPenetrationBase>0.40</armorPenetrationBase>
       <speed>70</speed>
       <explosionRadius>1.2</explosionRadius>
-      <explosionDamageType>Bomb</explosionDamageType>
       <explosionDelay>0</explosionDelay>
-      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
     </projectile>
   </ThingDef>
 
@@ -179,7 +178,7 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>14</damageAmountBase>
+      <damageAmountBase>16</damageAmountBase>
       <stoppingPower>0.8</stoppingPower>
       <armorPenetrationBase>0.25</armorPenetrationBase>
       <speed>80</speed>

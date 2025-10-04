@@ -12,43 +12,43 @@
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_Yamato</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>15000~25000</totalPriceRange>
+        <totalPriceRange>15000-25000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_DevilSwordDante</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>20000~35000</totalPriceRange>
+        <totalPriceRange>20000-35000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_MirageEdge</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>12000~20000</totalPriceRange>
+        <totalPriceRange>12000-20000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_BlueRose</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>10000~18000</totalPriceRange>
+        <totalPriceRange>10000-18000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_EbonyAndIvory</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>18000~30000</totalPriceRange>
+        <totalPriceRange>18000-30000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_KingCerberus</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>15000~25000</totalPriceRange>
+        <totalPriceRange>15000-25000</totalPriceRange>
       </li>
       <!-- Some regular luxury items to make the trader seem more legitimate -->
       <li Class="StockGenerator_Category">
         <categoryDef>Luxury</categoryDef>
         <thingDefCountRange>2~4</thingDefCountRange>
-        <totalPriceRange>500~2000</totalPriceRange>
+        <totalPriceRange>500-2000</totalPriceRange>
       </li>
       <li Class="StockGenerator_Category">
         <categoryDef>Techprints</categoryDef>
         <thingDefCountRange>1~3</thingDefCountRange>
-        <totalPriceRange>800~1500</totalPriceRange>
+        <totalPriceRange>800-1500</totalPriceRange>
       </li>
     </stockGenerators>
   </TraderKindDef>
@@ -64,28 +64,28 @@
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_Yamato</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>12000~20000</totalPriceRange>
+        <totalPriceRange>12000-20000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_BlueRose</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>8000~15000</totalPriceRange>
+        <totalPriceRange>8000-15000</totalPriceRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMC_MirageEdge</thingDef>
         <countRange>0~1</countRange>
-        <totalPriceRange>10000~18000</totalPriceRange>
+        <totalPriceRange>10000-18000</totalPriceRange>
       </li>
       <!-- Regular goods to make them seem like normal traders -->
       <li Class="StockGenerator_Category">
         <categoryDef>WeaponsRanged</categoryDef>
         <thingDefCountRange>1~3</thingDefCountRange>
-        <totalPriceRange>300~1200</totalPriceRange>
+        <totalPriceRange>300-1200</totalPriceRange>
       </li>
       <li Class="StockGenerator_Category">
         <categoryDef>Apparel</categoryDef>
         <thingDefCountRange>2~5</thingDefCountRange>
-        <totalPriceRange>200~800</totalPriceRange>
+        <totalPriceRange>200-800</totalPriceRange>
       </li>
     </stockGenerators>
   </TraderKindDef>

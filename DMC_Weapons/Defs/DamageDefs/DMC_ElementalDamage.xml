@@ -45,7 +45,7 @@
     <externalViolence>true</externalViolence>
     <deathMessage>{0} was electrocuted by supernatural lightning.</deathMessage>
     <hediff>Burn</hediff>
-    <armorCategory>Electric</armorCategory>
+    <armorCategory>Sharp</armorCategory>
     <defaultDamage>12</defaultDamage>
     <defaultArmorPenetration>0.25</defaultArmorPenetration>
     <buildingDamageFactor>1.5</buildingDamageFactor>

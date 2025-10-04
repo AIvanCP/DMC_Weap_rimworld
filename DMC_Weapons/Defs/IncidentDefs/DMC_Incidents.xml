@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Quest to obtain a random DMC weapon -->
-  <IncidentDef>
-    <defName>DMC_LegendaryWeaponQuest</defName>
-    <label>legendary artifact discovery</label>
-    <category>ThreatBig</category>
-    <targetTags>
-      <li>Map_PlayerHome</li>
-    </targetTags>
-    <workerClass>IncidentWorker_QuestItemStash</workerClass>
-    <letterLabel>Legendary Artifact Discovery</letterLabel>
-    <letterText>Your researchers have discovered ancient texts describing the location of a legendary weapon cache hidden somewhere on this world. These weapons are said to be from another realm, wielded by legendary demon hunters.\n\nThe expedition will be dangerous and expensive, but the rewards could be beyond imagination.</letterText>
-    <letterDef>PositiveEvent</letterDef>
-    <baseChance>0.5</baseChance>
-    <minRefireDays>60</minRefireDays>
-    <pointsScaleable>true</pointsScaleable>
-    <minThreatPoints>800</minThreatPoints>
-  </IncidentDef>
-
   <!-- Orbital trader arrival event -->
   <IncidentDef>
     <defName>DMC_LegendaryOrbitalTrader</defName>
