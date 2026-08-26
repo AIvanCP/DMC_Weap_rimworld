@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    ============================================================================
+    DEVIL ARMS - DMC3, DMC4, DMC5
+    Bases (DMC_MeleeWeaponBase / DMC_MeleeWeaponBluntBase) live in DMC_MeleeWeapons.xml.
+    These use <costList> rather than stuff, so the artwork keeps its own colours
+    instead of being tinted by the material it was smithed from.
+    ============================================================================
+  -->
+
+  <!--
+    ===================================================================
+    Rebellion - Dante (DMC3 / DMC4 / DMC5)   TIER 1
+    A keepsake from Sparda, dormant until Dante's own blood woke it up. Stinger.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_Rebellion</defName>
+    <label>Rebellion</label>
+    <description>A broadsword left to Dante by his father, with a skeletal figure clasped into the crossguard. For years it was an ordinary heavy blade - the demonic power sealed in it stayed asleep until Dante's own blood was spilled on it. It is the sword he goes back to when nothing else is working, and the one he uses for the Stinger: a thrust that closes the whole distance at once.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Rebellion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Rebellion</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_MonoSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>60</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Gold>10</Gold>
+    </costList>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+      <Mass>2.5</Mass>
+      <Beauty>10</Beauty>
+      <MarketValue>3500</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>3</MeleeHitChance>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_DemonicArchaeology</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>guard</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>1.9</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+      </li>
+      <li>
+        <label>stinger point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>34</power>
+        <cooldownTime>2.1</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stab</def>
+              <amount>18</amount>
+              <armorPenetration>0.55</armorPenetration>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Force Edge - Dante (DMC3)   TIER 2
+    The Sparda with its power sealed. Still holy, just quiet about it.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_ForceEdge</defName>
+    <label>Force Edge</label>
+    <description>The legendary Sparda in its sealed form - a plain, heavy sword with a demon's face worked into the guard and none of the light it is supposed to carry. The power is still in there. It leaks out at the edges when the blade connects, which is the only hint you get that this is the same weapon that once shut the demon world.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/ForceEdge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/ForceEdge</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_MonoSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>90</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Gold>30</Gold>
+    </costList>
+    <statBases>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>2.4</Mass>
+      <Beauty>14</Beauty>
+      <MarketValue>6500</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MeleeDodgeChance>2</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <tools>
+      <li>
+        <label>guard</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
+      </li>
+      <li>
+        <label>sealed edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>36</power>
+        <cooldownTime>1.9</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>8</amount>
+            <chance>0.20</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>38</power>
+        <cooldownTime>2.1</cooldownTime>
+        <armorPenetration>0.60</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>9</amount>
+            <chance>0.20</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Sparda - Dante (DMC3SE / DMC5)   TIER 3
+    The Legendary Dark Knight's own blade, unsealed. Shifts into a scythe.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_Sparda</defName>
+    <label>Sparda</label>
+    <description>The sword of the demon who turned on his own kind, awake and making no secret of it. Unsealed it reshapes itself mid-swing - a broadsword one moment, a scythe the next - and the light coming off it is the same light that sealed the demon world two thousand years ago. It does not care what a target is wearing.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Sparda</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Sparda</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_PlasmaSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_PlasmaSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Gold>120</Gold>
+      <Uranium>40</Uranium>
+    </costList>
+    <statBases>
+      <WorkToMake>75000</WorkToMake>
+      <Mass>2.2</Mass>
+      <Beauty>30</Beauty>
+      <MarketValue>20000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>6</MeleeHitChance>
+      <MeleeDodgeChance>5</MeleeDodgeChance>
+      <PainShockThreshold>0.20</PainShockThreshold>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>14</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.70</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>14</amount>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>scythe sweep</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>46</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.60</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>12</amount>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>52</power>
+        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>0.80</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>16</amount>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Devil Sword Vergil - Vergil (DMC5)   TIER 3
+    Yamato, Beowulf and the Mirage Edge fused. Vergil's answer to his brother.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_DevilSwordVergil</defName>
+    <label>Devil Sword Vergil</label>
+    <description>Yamato, the Beowulf and the Mirage Edge folded into a single weapon by a man who had finally stopped pretending he was only half of one. The blade throws spectral copies of itself while the pommel still carries Beowulf's light. Where Yamato cuts precisely, this cuts precisely and then keeps cutting from three directions its wielder is not standing in.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/DevilSwordVergil</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/DevilSwordVergil</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_MonoSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Gold>100</Gold>
+      <Uranium>50</Uranium>
+    </costList>
+    <statBases>
+      <WorkToMake>78000</WorkToMake>
+      <Mass>1.8</Mass>
+      <Beauty>28</Beauty>
+      <MarketValue>22000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>7</MeleeHitChance>
+      <MeleeDodgeChance>6</MeleeDodgeChance>
+      <MoveSpeed>0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>14</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>spectral edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>46</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.75</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DimensionalCut</def>
+            <amount>14</amount>
+            <armorPenetration>2.0</armorPenetration>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>judgement thrust</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>52</power>
+        <cooldownTime>2.2</cooldownTime>
+        <armorPenetration>0.85</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DimensionalCut</def>
+            <amount>16</amount>
+            <armorPenetration>2.0</armorPenetration>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>DMC_DimensionalCut</def>
+              <amount>26</amount>
+              <armorPenetration>2.0</armorPenetration>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>beowulf pommel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>1.6</cooldownTime>
+        <armorPenetration>0.35</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>10</amount>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Red Queen - Nero (DMC4 / DMC5)   TIER 2
+    Exceed: rev the throttle, dump fuel on the blade, ignite it mid-swing.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_RedQueen</defName>
+    <label>Red Queen</label>
+    <description>An anti-demon sword issued by the Order of the Sword and then heavily modified by the one person who was supposed to be using it as issued. The grip carries a motorcycle throttle wired to a combustion system in the blade: rev it, and the edge dumps and ignites its own fuel on the way in. Nero has never once used it without revving it.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/RedQueen</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/RedQueen</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_PlasmaSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_PlasmaSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>110</Plasteel>
+      <ComponentIndustrial>14</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Chemfuel>75</Chemfuel>
+    </costList>
+    <statBases>
+      <WorkToMake>44000</WorkToMake>
+      <Mass>3.0</Mass>
+      <Beauty>12</Beauty>
+      <MarketValue>9000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>4</MeleeHitChance>
+    </equippedStatOffsets>
+    <tools>
+      <li>
+        <label>guard</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>38</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>14</amount>
+            <chance>0.45</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>exceed slash</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>44</power>
+        <cooldownTime>2.6</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>20</amount>
+            <chance>0.60</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Agni & Rudra - Dante (DMC3 / DMC5)   TIER 2
+    Two talking scimitars. Fire and wind, and neither of them shuts up.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_AgniRudra</defName>
+    <label>Agni &amp; Rudra</label>
+    <description>A matched pair of serrated scimitars named for the Hindu gods of fire and of wind, each with a face set into the blade and an opinion about how the fight is going. Agni burns what it touches; Rudra opens up the air in a wide arc and takes whatever is standing in it. They bicker constantly and fight in perfect time with each other.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/AgniRudra</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/AgniRudra</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_PlasmaSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_PlasmaSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>40</Gold>
+    </costList>
+    <statBases>
+      <WorkToMake>46000</WorkToMake>
+      <Mass>2.0</Mass>
+      <Beauty>16</Beauty>
+      <MarketValue>9500</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <tools>
+      <li>
+        <label>Agni</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>1.5</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>12</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>Rudra</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>1.5</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicWind</def>
+            <amount>12</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>twin thrust</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>34</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Beowulf - Dante / Vergil (DMC3 / DMC5)   TIER 2
+    The lightbeast Sparda blinded. His gauntlets blind in turn.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBluntBase">
+    <defName>DMC_Beowulf</defName>
+    <label>Beowulf</label>
+    <description>Gauntlets and greaves formed from the lightbeast Beowulf, who was blinded by Sparda and spent the rest of his existence looking for someone to blame. The light he could no longer see by comes out of the knuckles now. Every clean hit leaves the target squinting at a white afterimage that is not going away soon.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Beowulf</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Beowulf</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_ZeusHammer</meleeHitSound>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>50</Gold>
+    </costList>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>3.5</Mass>
+      <Beauty>14</Beauty>
+      <MarketValue>9000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <tools>
+      <li>
+        <label>gauntlet</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>34</power>
+        <cooldownTime>1.5</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>10</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>greave</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>42</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>12</amount>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>real impact</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>50</power>
+        <cooldownTime>2.8</cooldownTime>
+        <armorPenetration>0.65</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_HolyLight</def>
+            <amount>16</amount>
+            <chance>0.45</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Balrog - Dante (DMC5)   TIER 3
+    The king of Fire Hell, sealed into a pair of arms and legs. Blow / Kick mode.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBluntBase">
+    <defName>DMC_Balrog</defName>
+    <label>Balrog</label>
+    <description>What is left of the king of Fire Hell after being sealed into a set of gauntlets and greaves, still hot enough that the wrappings smoke. Blow Mode puts the speed in the hands; Kick Mode puts everything else in the legs. Push it hard enough and it goes to Ignition, at which point it stops pretending to be equipment and starts behaving like the thing it used to be.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Balrog</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Balrog</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_PlasmaSword</meleeHitSound>
+    <costList>
+      <Plasteel>170</Plasteel>
+      <ComponentSpacer>7</ComponentSpacer>
+      <Gold>70</Gold>
+      <Chemfuel>150</Chemfuel>
+    </costList>
+    <statBases>
+      <WorkToMake>68000</WorkToMake>
+      <Mass>3.2</Mass>
+      <Beauty>16</Beauty>
+      <MarketValue>15000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MoveSpeed>0.25</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>13</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>blow mode jab</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>1.2</cooldownTime>
+        <armorPenetration>0.40</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>10</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>kick mode heel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>48</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.55</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>16</amount>
+            <chance>0.45</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>ignition</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>56</power>
+        <cooldownTime>3.0</cooldownTime>
+        <armorPenetration>0.65</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>22</amount>
+            <chance>0.60</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Gilgamesh - Dante (DMC4)   TIER 3
+    Living demonic armour worn as fists. No element - it does not need one.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBluntBase">
+    <defName>DMC_Gilgamesh</defName>
+    <label>Gilgamesh</label>
+    <description>Demonic armour that decided being armour was beneath it. Worn as gauntlets and greaves, it is the heaviest thing in the arsenal and makes no attempt at finesse: it goes through plate, then through what the plate was protecting, and the shock of the impact travels far enough that whatever is hit tends to stop functioning for a moment.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Gilgamesh</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Gilgamesh</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_ZeusHammer</meleeHitSound>
+    <costList>
+      <Plasteel>220</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+      <Uranium>80</Uranium>
+    </costList>
+    <statBases>
+      <WorkToMake>70000</WorkToMake>
+      <Mass>5.0</Mass>
+      <Beauty>12</Beauty>
+      <MarketValue>14000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>3</MeleeHitChance>
+      <MoveSpeed>-0.2</MoveSpeed>
+      <PainShockThreshold>0.25</PainShockThreshold>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>13</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>gauntlet</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>44</power>
+        <cooldownTime>1.8</cooldownTime>
+        <armorPenetration>0.70</armorPenetration>
+      </li>
+      <li>
+        <label>greave</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>54</power>
+        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>0.80</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_Stagger</def>
+            <amount>12</amount>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>full house</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>62</power>
+        <cooldownTime>3.2</cooldownTime>
+        <armorPenetration>0.90</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_Stagger</def>
+            <amount>18</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Nevan - Dante (DMC3)   TIER 2
+    A succubus who agreed to be an electric guitar. Also a scythe.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_Nevan</defName>
+    <label>Nevan</label>
+    <description>The succubus Nevan, who lost a fight and took it well, now shaped as an electric guitar with a scythe blade along its body. Played, it throws swarms of bats wrapped in lightning; swung, it is a scythe with a very poor attitude. What the bats take is not blood - the target keeps all of that and still ends up with nothing left to fight with.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Nevan</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Nevan</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_ZeusHammer</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <costList>
+      <Plasteel>110</Plasteel>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Gold>45</Gold>
+      <Uranium>20</Uranium>
+    </costList>
+    <statBases>
+      <WorkToMake>48000</WorkToMake>
+      <Mass>3.0</Mass>
+      <Beauty>18</Beauty>
+      <MarketValue>10000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MeleeDodgeChance>4</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <tools>
+      <li>
+        <label>scythe sweep</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>36</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>0.40</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicLightning</def>
+            <amount>12</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>bat swarm</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>28</power>
+        <cooldownTime>1.6</cooldownTime>
+        <armorPenetration>0.30</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_SoulDrain</def>
+            <amount>8</amount>
+            <chance>0.45</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>distortion</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>0.35</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicLightning</def>
+            <amount>16</amount>
+            <chance>0.50</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Cavaliere - Dante (DMC5)   TIER 3
+    A motorcycle. It splits in half and both halves are chainsaws.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
+    <defName>DMC_Cavaliere</defName>
+    <label>Cavaliere</label>
+    <description>A motorcycle built by Nico that splits down the middle into two chainsaw wheels, one per hand. It is far too heavy to carry sensibly and slows its wielder to a walk, which stops mattering the moment the wheels spin up. Nothing it hits comes away with a clean edge; things it hits come away in pieces and keep bleeding.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Cavaliere</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.05</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponMelee/Cavaliere</uiIconPath>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound>MeleeHit_Metal_Sharp</meleeHitSound>
+    <costList>
+      <Plasteel>180</Plasteel>
+      <Steel>250</Steel>
+      <ComponentIndustrial>25</ComponentIndustrial>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Chemfuel>200</Chemfuel>
+    </costList>
+    <statBases>
+      <WorkToMake>72000</WorkToMake>
+      <Mass>12.0</Mass>
+      <Beauty>8</Beauty>
+      <MarketValue>18000</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.45</MoveSpeed>
+      <MeleeHitChance>2</MeleeHitChance>
+      <PainShockThreshold>0.15</PainShockThreshold>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>13</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <tools>
+      <li>
+        <label>frame</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2.6</cooldownTime>
+        <armorPenetration>0.45</armorPenetration>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+      <li>
+        <label>saw wheel</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>52</power>
+        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>0.50</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_Shred</def>
+            <amount>18</amount>
+            <chance>0.50</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>full throttle</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>64</power>
+        <cooldownTime>3.6</cooldownTime>
+        <armorPenetration>0.60</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_Shred</def>
+            <amount>26</amount>
+            <chance>0.60</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

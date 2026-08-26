@@ -1,133 +1,138 @@
-# RimWorld: Devil May Cry Weapons Mod
+# RimWorld: Devil May Cry Weapons
 
-[![RimWorld](https://img.shields.io/badge/RimWorld-1.5-brightgreen.svg)](https://rimworldgame.com/)
+[![RimWorld](https://img.shields.io/badge/RimWorld-1.5%20%7C%201.6-brightgreen.svg)](https://rimworldgame.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Legendary weapons from the Devil May Cry universe have mysteriously appeared on the rim. These ancient artifacts of demonic power are incredibly rare and valuable, sought after by collectors and warriors alike.
+Twenty-one devil arms from Devil May Cry 3, 4 and 5. No assembly, no Harmony — every
+effect described below is stock RimWorld XML, verified against `Assembly-CSharp.dll`.
 
-## ✨ Features
+## The arsenal
 
-- **🗡️ 6 Legendary DMC Weapons** - Yamato, Blue Rose, Mirage Edge, Devil Sword Dante, Ebony & Ivory, and King Cerberus
-- **🎯 Player-Exclusive** - NPCs and enemies cannot spawn with these weapons (player-only access)
-- **� DMC5 Lore-Accurate Abilities** - Each weapon has unique special effects based on Devil May Cry 5 lore
-- **⚡ Elemental Combat** - Fire, ice, lightning damage with debuff effects (burn, slow, stun)
-- **💰 High-Value Items** - Weapons cost 8,000-35,000 silver each
-- **📚 Balanced Gameplay** - Powerful but not game-breaking, with chance-based special effects
-- **🔬 Research Progression** - 3-tier research tree to unlock crafting
-- **🎭 Dev Mode Compatible** - Can be spawned for testing
+### Devil swords
 
-## 🔥 Special Abilities (DMC5 Lore-Based)
+| Weapon | Game | Tier | What it does |
+|---|---|---|---|
+| **Rebellion** | 3 / 4 / 5 | 1 | Plain, reliable broadsword. Its Stinger thrust hits far harder against a target that has not noticed you |
+| **Force Edge** | 3 | 2 | The Sparda sealed. A little holy light leaks out when it connects |
+| **Sparda** | 3SE / 5 | 3 | Unsealed. Holy light on the blade, demonic fire on the scythe sweep, the best armour penetration of any sword here |
+| **Yamato** | 3 / 5 | 2 | Dimensional cut: bypasses armour outright and opens a wound that will not clot. Judgement Cut on an unaware target |
+| **Mirage Edge** | 5 | 2 | Fast, light, high dodge, +move speed. Built around the surprise attack |
+| **Devil Sword Dante** | 5 | 3 | Heavy fire procs on both the edge and the thrust |
+| **Devil Sword Vergil** | 5 | 3 | Yamato + Beowulf + Mirage Edge. Dimensional cut on two tools, holy light on the pommel |
+| **Red Queen** | 4 / 5 | 2 | Exceed. The highest fire proc chance in the mod (60% on the exceed slash) |
+| **Agni & Rudra** | 3 / 5 | 2 | Two blades, two elements — Agni burns, Rudra sweeps wide and catches extra targets |
+| **Nevan** | 3 | 2 | Lightning on the scythe and the distortion; the bat swarm drains the target instead of wounding it |
 
-### Yamato - "Dimensional Severance"
-- **Dimensional Cutting**: Extremely high armor penetration (65-75%)
-- **Reality Slash**: 20-25% chance to completely ignore all armor
-- *"A blade that can cut through the very fabric of reality"*
+### Gauntlets
 
-### Devil Sword Dante - "Demonic Inferno" 
-- **Hellfire Blade**: All attacks deal supernatural fire damage
-- **Demonic Burn**: 10-35% chance to apply intense burning that's hard to extinguish
-- *"Forged from Dante's demonic power, it burns with the fires of hell"*
+| Weapon | Game | Tier | What it does |
+|---|---|---|---|
+| **Beowulf** | 3 / 5 | 2 | Holy light on every tool. Blinds — the target cannot aim |
+| **Balrog** | 5 | 3 | Fast jabs, heavy kicks, and an Ignition tool with a 60% fire proc |
+| **Gilgamesh** | 4 | 3 | No element. Highest blunt armour penetration in the mod, plus concussive stagger |
+| **King Cerberus** | 5 | 2 | Three heads, three elements — fire, ice, lightning — plus a plain chain whip |
 
-### King Cerberus - "Elemental Fury"
-- **Fire Head**: Demonic fire damage with 25% burn chance
-- **Ice Head**: Demonic ice damage with 30% slow/freeze chance  
-- **Lightning Head**: Electric damage with 20% stun/paralysis chance
-- **Chain Whip**: Area damage that can hit multiple nearby enemies
-- *"Each head represents a different aspect of hellish punishment"*
+### Heavy
 
-### Mirage Edge - "Phantom Strike"
-- **Phase Attacks**: Can bypass some defenses through dimensional phasing
-- **Surprise Strike**: 35-40% chance for surprise attacks dealing extra damage
-- *"A sword that exists partially in another dimension"*
+| Weapon | Game | Tier | What it does |
+|---|---|---|---|
+| **Cavaliere** | 5 | 3 | 12 kg and −0.45 move speed. Cleaves several targets and leaves them bleeding badly |
 
-### Blue Rose - "Explosive Ordnance"
-- **High-Explosive Rounds**: Creates small explosions on impact (1.2 radius)
-- **Area Damage**: Can damage multiple enemies clustered together
-- *"Nero's custom revolver loaded with specialized explosive ammunition"*
+### Firearms
 
-### Ebony & Ivory - "Gun Kata Mastery"
-- **Rapid Fire**: 6-shot burst with minimal delay between shots
-- **Dual Wielding**: Faster warmup and improved accuracy
-- **Stylish Combat**: Dante's signature gun kata fighting style
-- *"Twin pistols that never miss their mark in the hands of a master"*
+| Weapon | Game | Tier | What it does |
+|---|---|---|---|
+| **Ebony & Ivory** | 3 / 4 / 5 | 2 | 6-round burst, fastest cooldown here. Sustained fire occasionally staggers |
+| **Blue Rose** | 4 / 5 | 2 | Both barrels at once — a small charged detonation that staggers the target |
+| **Coyote-A** | 4 / 5 | 1 | Sawed-off. 16 tiles of range, enormous stopping power, knocks targets down |
+| **Kalina Ann** | 3 / 5 | 2 | Missile launcher, 2.6 blast radius, with a grappling bayonet for melee |
+| **Artemis** | 3 | 2 | Five-bolt multi-lock burst; each bolt can sear the target's sight |
+| **Spiral** | 3 | 2 | 45-tile rifle whose round rebounds for a second hit 45% of the time |
 
-## 🗡️ Weapons Included
+## How the effects work
 
-### Melee Weapons
+There is no C# here. Each elemental hit is a real second damage instance attached to a
+tool through `<extraMeleeDamages>` (or to a projectile through
+`<projectile><extraDamages>`), each with its own `<chance>`. The damage type then applies
+its debuff through `<additionalHediffs>` on the `DamageDef`.
 
-| Weapon | Description | Special Abilities | Price Range |
-|--------|-------------|-------------------|-------------|
-| **Yamato** | Vergil's legendary katana that cuts through dimensions | **Dimensional Cutting**: 65-75% armor penetration, 20-25% chance to ignore all armor | 8,500+ silver |
-| **Devil Sword Dante** | Dante's ultimate demonic blade with hellfire powers | **Demonic Fire**: All attacks deal fire damage, 10-35% chance to apply demonic burn | 20,000+ silver |
-| **Mirage Edge** | A demon sword that phases between dimensions | **Phase Strike**: Surprise attacks deal +10-15 extra damage, 35-40% chance | 12,000+ silver |
-| **King Cerberus** | Triple-nunchaku with elemental powers of hell's guardian | **Elemental Mastery**: Fire burns (25%), Ice slows (30%), Lightning stuns (20%), Chain whip area damage | 15,000+ silver |
+| Damage type | Debuff | Effect |
+|---|---|---|
+| `DMC_DemonicFire` | `DMC_DemonicBurn` | Pain, rest drain, movement loss at higher severity. Tendable. Can ignite the ground |
+| `DMC_DemonicIce` | `DMC_DemonicFrost` | Movement and manipulation loss |
+| `DMC_DemonicLightning` | `DMC_ElectricShock` | Real stun via `causeStun` (45 ticks, with `stunAdaptationTicks`), then lingering accuracy loss |
+| `DMC_HolyLight` | `DMC_LightBlind` | Sight capacity and shooting accuracy loss |
+| `DMC_DimensionalCut` | `DMC_DimensionalWound` | Armour penetration 2.0 (bypasses armour), raised bleed rate, reduced natural healing |
+| `DMC_DemonicWind` | — | Widened `cutExtraTargetsCurve` + `cutCleaveBonus` 2.0 |
+| `DMC_SoulDrain` | `DMC_Enervated` | Consciousness, manipulation and melee DPS loss; heavy rest drain |
+| `DMC_Shred` | `DMC_Shredded` | Heavy bleeding, tendable |
+| `DMC_Stagger` | — | Pure stun, no wound (inherits vanilla `Stun`) |
+| `DMC_ChargedRound` | — | Explosive, staggers on hit |
 
-### Ranged Weapons
+## Acquisition
 
-| Weapon | Description | Special Abilities | Price Range |
-|--------|-------------|-------------------|-------------|
-| **Blue Rose** | Nero's custom double-barrel revolver | **Explosive Rounds**: Small area explosion on impact (1.2 radius) | 10,000+ silver |
-| **Ebony & Ivory** | Dante's iconic twin pistols | **Gun Kata**: 6-shot burst, faster firing, reduced recoil | 18,000+ silver |
+| Route | Detail |
+|---|---|
+| Research | `demonic archaeology` (4,000) → `legendary weapon forging` (6,000) → `ultimate demon armaments` (8,000) |
+| Crafting | Melee at an electric smithy, firearms at a machining table. Every recipe names its research tier explicitly |
+| Orbital trader | `legendary weapon collector`, commonality 0.15 among orbital traders. Buys DMC weapons as well as selling them |
+| Caravan | `legendary artifact caravan`, registered with both outlander factions |
+| Quests | Weapons carry `RewardStandardLowFreq` |
 
-## 📋 Installation
+No raider, mercenary, tribal, Empire or Traders Guild pawn will spawn carrying one.
 
-1. Download the latest release
-2. Extract to your RimWorld `Mods` folder
-3. Enable "DMC Weapons" in the mod list
-4. Start a new game or add to existing saves
+## Compatibility
 
-## 🎮 How to Obtain
+- RimWorld 1.5 / 1.6, verified against 1.6
+- Royalty is optional — it is only used for equip/hit sound flavour, guarded with `MayRequire`
+- No other DLC required, no dependency on other mods
+- Safe to add to an existing save
 
-### Research & Crafting
-1. Research "Demonic Weaponry" → "Legendary Weapons" → "Ultimate Weapons"
-2. Craft at Fabrication Bench (requires advanced materials)
+## Fixed in the expansion pass
 
-### Trading
-- **Legendary Weapon Dealer** (Orbital) - 0.15% spawn chance
-- **Legendary Artifact Caravan** - 0.08% spawn chance
+These were live bugs in the previous version, verified against vanilla data before changing:
 
-### Quests
-- Ultra-rare quest rewards (0.3-0.5% chance)
-- High-value settlement rewards
+1. **The weapons were not player-exclusive.** The four melee weapons carried
+   `MedievalMeleeDecent` / `MedievalMeleeAdvanced`, and both guns carried
+   `SimpleGun` / `Pistol` / `Revolver` / `Autopistol` — the exact tags mercenary, tribal,
+   Empire and Traders Guild pawnkinds roll their weapons from. Raiders could spawn holding
+   Yamato. All weapons now carry only `DMCWeapon`.
 
-### Dev Mode
-Use "Add item stacks" to spawn weapons for testing
+2. **Every patch file was inert.** `NPCEquipment_Removal.xml` and the three `.disabled`
+   files used `<Defs>` as their root element; RimWorld only runs patches from a `<Patch>`
+   root, so all four were loaded as def files and did nothing. The one remaining patch is
+   now correct.
 
-## ⚖️ Balance Philosophy
+3. **The research tree unlocked nothing.** `recipeMaker` is inherited from
+   `BaseMeleeWeapon`, which has no `researchPrerequisite` — Yamato was craftable at a
+   fueled smithy on day one for 200 steel, despite 18,000 points of research existing.
 
-These weapons are designed as **ultimate end-game content** for veteran players:
-- Extremely rare acquisition methods maintain game balance
-- High crafting costs prevent early-game exploitation  
-- Player-exclusive design preserves challenge progression
-- Powerful but not game-breaking damage values
+4. **The elemental system was never wired up.** `DMC_DemonicFire`, `DMC_DemonicIce`,
+   `DMC_DemonicLightning` and six hediffs were defined and referenced by nothing. King
+   Cerberus's "fire head", "ice head" and "lightning head" all dealt identical plain
+   `Blunt` damage.
 
-## 🔧 Compatibility
+5. **Blue Rose never exploded.** `Bullet_BlueRoseExplosive` set `explosionRadius` while
+   inheriting `BaseBullet`, whose `thingClass` is `Bullet` — and `Bullet.Impact` does not
+   read `explosionRadius`. Every vanilla explosive projectile overrides `thingClass` to
+   `Projectile_Explosive`; this one now does too.
 
-- **RimWorld Version**: 1.5+
-- **Save Compatible**: Yes (can be added to existing saves)
-- **Mod Conflicts**: None known
-- **Performance Impact**: Minimal
+6. **Four weapons referenced sound defs that do not exist.** `Interact_MonolithActivate`
+   (Yamato, Devil Sword Dante, Mirage Edge) and `Interact_MeleeWeapon` (King Cerberus) are
+   not SoundDefs in any DLC, so they threw a cross-reference error on every load.
 
-## 📝 Technical Details
+7. **The caravan trader could not spawn.** A non-orbital `TraderKindDef` only appears if a
+   `FactionDef` lists it in `caravanTraderKinds`; nothing did.
 
-- All weapons use custom projectiles and sound effects
-- NPC exclusion system prevents AI from using these weapons
-- Optimized texture scaling for 128x128 source images
-- Full integration with RimWorld's quality and material systems
+8. **Stat offsets were off by roughly a factor of twenty.** `MeleeHitChance`,
+   `MeleeDodgeChance` and `ShootingAccuracyPawn` are measured in skill-like points, not
+   percentages — the vanilla brawler trait grants `MeleeHitChance` +4. The old defs granted
+   +0.25 and +0.15, which is functionally nothing.
 
-## 🐛 Known Issues
+## License
 
-- Weapons appear large with 128x128 textures (fixed with `drawSize` scaling)
-- Some other mods may use incorrect IntRange syntax (`0-1` instead of `0~1`)
-
-## 📄 License
-
-This mod is licensed under the MIT License. Devil May Cry is a trademark of Capcom.
-
-## 🤝 Contributing
-
-Feel free to submit issues, suggestions, or pull requests to improve the mod!
+MIT. Devil May Cry is a trademark of Capcom; this is an unofficial fan mod.
 
 ---
 
-*"Power is everything. Without power, you cannot protect anything."* - Vergil
+*"Power is everything. Without power, you cannot protect anything."* — Vergil

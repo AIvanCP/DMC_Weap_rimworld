@@ -1,19 +1,109 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Yamato - Vergil's legendary katana -->
-  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+  <!--
+    ============================================================================
+    SHARED BASES
+
+    weaponTags / tradeTags are declared with Inherit="False" and only carry DMCWeapon.
+    That is what actually keeps these weapons out of raider hands: PawnKindDefs pick
+    weapons by tag, and no PawnKindDef anywhere asks for DMCWeapon. The previous
+    MedievalMeleeDecent / MedievalMeleeAdvanced tags were exactly the tags mercenary,
+    tribal, Empire and Traders Guild pawnkinds roll from.
+
+    Stat offset scale note: MeleeHitChance / MeleeDodgeChance / ShootingAccuracyPawn are
+    measured in skill-like points, not percentages (vanilla brawler trait = +4
+    MeleeHitChance). Values below 1 are effectively nothing.
+    ============================================================================
+  -->
+
+  <ThingDef Name="DMC_MeleeWeaponBase" ParentName="BaseMeleeWeapon_Sharp_Quality" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+    <burnableByRecipe>false</burnableByRecipe>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MaxHitPoints>240</MaxHitPoints>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="False">
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <tradeTags Inherit="False">
+      <li>DMCWeapon</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>DMC_LegendaryWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef Name="DMC_MeleeWeaponBluntBase" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
+    <techLevel>Spacer</techLevel>
+    <smeltable>false</smeltable>
+    <burnableByRecipe>false</burnableByRecipe>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MaxHitPoints>240</MaxHitPoints>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <weaponTags Inherit="False">
+      <li>DMCWeapon</li>
+    </weaponTags>
+    <tradeTags Inherit="False">
+      <li>DMCWeapon</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>ElectricSmithy</li>
+      </recipeUsers>
+      <researchPrerequisite>DMC_LegendaryWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+
+  <!--
+    ============================================================================
+    Yamato - Vergil (DMC3 / DMC5)
+    The blade that separates man from devil. Its cut lands before armor gets a say.
+    ============================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
     <defName>DMC_Yamato</defName>
     <label>Yamato</label>
-    <description>A legendary katana forged in the underworld, once wielded by the Dark Knight Sparda and later by his son Vergil. This blade is said to be able to cut through the very fabric of dimensions, separating man from devil, and slicing through anything with supernatural precision. The weapon hums with barely contained demonic power, and its dark blue sheath seems to absorb light itself.</description>
-    <techLevel>Spacer</techLevel>
+    <description>A katana forged in the underworld, carried by the Dark Knight Sparda and inherited by his son Vergil. It does not cut through things so much as cut through the distance between them - a Judgement Cut arrives at a target that has not yet been reached. Armor is not defeated by this blade; it is simply somewhere the blade never had to be.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/Yamato</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <uiIconPath>Things/Item/Equipment/WeaponMelee/Yamato</uiIconPath>
-    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_MonoSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
     <costStuffCount>200</costStuffCount>
     <stuffCategories>
       <li>Metallic</li>
@@ -25,17 +115,9 @@
       <MarketValue>8500</MarketValue>
     </statBases>
     <equippedStatOffsets>
-      <MeleeDodgeChance>0.15</MeleeDodgeChance>
-      <MeleeHitChance>0.25</MeleeHitChance>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>4</MeleeDodgeChance>
     </equippedStatOffsets>
-    <weaponTags>
-      <li>MedievalMeleeDecent</li>
-      <li>MedievalMeleeAdvanced</li>
-      <li>DMCWeapon</li>
-    </weaponTags>
-    <weaponClasses>
-      <li>Melee</li>
-    </weaponClasses>
     <tools>
       <li>
         <label>handle</label>
@@ -44,6 +126,7 @@
         </capacities>
         <power>12</power>
         <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
       </li>
       <li>
         <label>dimensional edge</label>
@@ -53,32 +136,64 @@
         <power>40</power>
         <cooldownTime>1.8</cooldownTime>
         <armorPenetration>0.65</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DimensionalCut</def>
+            <amount>12</amount>
+            <armorPenetration>2.0</armorPenetration>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
-        <label>dimensional thrust</label>
+        <label>judgement thrust</label>
         <capacities>
           <li>Stab</li>
         </capacities>
         <power>45</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetration>0.75</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DimensionalCut</def>
+            <amount>14</amount>
+            <armorPenetration>2.0</armorPenetration>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
+        <!-- A target that has not noticed you is a target the cut has already reached -->
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>DMC_DimensionalCut</def>
+              <amount>22</amount>
+              <armorPenetration>2.0</armorPenetration>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
       </li>
     </tools>
   </ThingDef>
 
-  <!-- Devil Sword Dante -->
-  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+  <!--
+    ============================================================================
+    Devil Sword Dante (DMC5)
+    Rebellion and Sparda fused through Dante's own awakened blood. It burns.
+    ============================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
     <defName>DMC_DevilSwordDante</defName>
     <label>Devil Sword Dante</label>
-    <description>The ultimate fusion of Dante's human heritage and demonic power made manifest as a weapon. This blade pulses with raw demonic energy, its surface rippling like liquid metal. The sword is said to contain a fragment of Dante's own soul, making it unbreakably loyal to its wielder. Its power grows with the user's determination, and in desperate moments, it can unleash devastating attacks that seem to defy reality itself.</description>
-    <techLevel>Spacer</techLevel>
+    <description>Rebellion and the Sparda, fused into one blade by Dante's fully awakened demonic blood. The surface ripples like something still deciding what shape to be, and every swing leaves heat behind it. The sword is not loyal because it was made well - it is loyal because part of its wielder is inside it.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/DevilSwordDante</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <uiIconPath>Things/Item/Equipment/WeaponMelee/DevilSwordDante</uiIconPath>
-    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_PlasmaSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_PlasmaSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
     <costStuffCount>250</costStuffCount>
     <stuffCategories>
       <li>Metallic</li>
@@ -90,18 +205,13 @@
       <MarketValue>12000</MarketValue>
     </statBases>
     <equippedStatOffsets>
-      <MeleeDodgeChance>0.20</MeleeDodgeChance>
-      <MeleeHitChance>0.30</MeleeHitChance>
+      <MeleeHitChance>6</MeleeHitChance>
+      <MeleeDodgeChance>5</MeleeDodgeChance>
       <PainShockThreshold>0.15</PainShockThreshold>
     </equippedStatOffsets>
-    <weaponTags>
-      <li>MedievalMeleeDecent</li>
-      <li>MedievalMeleeAdvanced</li>
-      <li>DMCWeapon</li>
-    </weaponTags>
-    <weaponClasses>
-      <li>Melee</li>
-    </weaponClasses>
+    <recipeMaker>
+      <researchPrerequisite>DMC_UltimateWeapons</researchPrerequisite>
+    </recipeMaker>
     <tools>
       <li>
         <label>handle</label>
@@ -110,6 +220,7 @@
         </capacities>
         <power>15</power>
         <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
       </li>
       <li>
         <label>demonic edge</label>
@@ -119,6 +230,13 @@
         <power>47</power>
         <cooldownTime>2.5</cooldownTime>
         <armorPenetration>0.50</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>12</amount>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
         <label>demonic thrust</label>
@@ -128,23 +246,36 @@
         <power>53</power>
         <cooldownTime>3.0</cooldownTime>
         <armorPenetration>0.60</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>15</amount>
+            <chance>0.30</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
     </tools>
   </ThingDef>
 
-  <!-- Mirage Edge -->
-  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+  <!--
+    ============================================================================
+    Mirage Edge - Vergil (DMC5)
+    A summoned blade. It is not really there, which is why it is hard to block.
+    ============================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBase">
     <defName>DMC_MirageEdge</defName>
     <label>Mirage Edge</label>
-    <description>A mysterious blade that seems to shift and waver like a mirage. This demon sword has the unsettling ability to phase in and out of reality, making it nearly impossible to predict or block its attacks. The translucent blade catches light in impossible ways, and enemies often report seeing multiple afterimages during combat. Its ethereal nature makes it surprisingly light despite its demonic power.</description>
-    <techLevel>Spacer</techLevel>
+    <description>Not a forged weapon but a conjured one - the same summoned-sword magic Vergil hangs in the air around him, held in the hand instead of thrown. It weighs almost nothing because most of it is not present, and it strikes from angles a real blade could not have travelled through.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/MirageEdge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <uiIconPath>Things/Item/Equipment/WeaponMelee/MirageEdge</uiIconPath>
-    <soundInteract>Interact_MonolithActivate</soundInteract>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_MonoSword</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_MonoSword</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
     <costStuffCount>180</costStuffCount>
     <stuffCategories>
       <li>Metallic</li>
@@ -156,18 +287,10 @@
       <MarketValue>7500</MarketValue>
     </statBases>
     <equippedStatOffsets>
-      <MeleeDodgeChance>0.25</MeleeDodgeChance>
-      <MeleeHitChance>0.20</MeleeHitChance>
-      <MoveSpeed>0.1</MoveSpeed>
+      <MeleeDodgeChance>8</MeleeDodgeChance>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MoveSpeed>0.3</MoveSpeed>
     </equippedStatOffsets>
-    <weaponTags>
-      <li>MedievalMeleeDecent</li>
-      <li>MedievalMeleeAdvanced</li>
-      <li>DMCWeapon</li>
-    </weaponTags>
-    <weaponClasses>
-      <li>Melee</li>
-    </weaponClasses>
     <tools>
       <li>
         <label>handle</label>
@@ -176,6 +299,7 @@
         </capacities>
         <power>10</power>
         <cooldownTime>2.0</cooldownTime>
+        <chanceFactor>0.3</chanceFactor>
       </li>
       <li>
         <label>phasing edge</label>
@@ -185,6 +309,14 @@
         <power>30</power>
         <cooldownTime>1.4</cooldownTime>
         <armorPenetration>0.55</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DimensionalCut</def>
+            <amount>8</amount>
+            <armorPenetration>2.0</armorPenetration>
+            <chance>0.25</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
         <label>phasing thrust</label>
@@ -194,23 +326,38 @@
         <power>32</power>
         <cooldownTime>1.6</cooldownTime>
         <armorPenetration>0.65</armorPenetration>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>DMC_DimensionalCut</def>
+              <amount>16</amount>
+              <armorPenetration>2.0</armorPenetration>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
       </li>
     </tools>
   </ThingDef>
 
-  <!-- King Cerberus -->
-  <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+  <!--
+    ============================================================================
+    King Cerberus - Dante (DMC5)
+    Three heads, three elements. Nunchaku, staff and whip in one.
+    ============================================================================
+  -->
+  <ThingDef ParentName="DMC_MeleeWeaponBluntBase">
     <defName>DMC_KingCerberus</defName>
     <label>King Cerberus</label>
-    <description>A demonic triple-nunchaku weapon that embodies the three-headed hound of the underworld. Each section represents a different elemental aspect: fire, ice, and lightning. The weapon can shift between forms and elements mid-combat, making it unpredictable and devastatingly effective. The chains connecting each section seem to extend and contract at will, and the weapon occasionally howls with the voices of ancient demons.</description>
-    <techLevel>Spacer</techLevel>
+    <description>The three-headed hound of the underworld, beaten into a weapon and still arguing about it. Ice, fire and lightning live in separate heads and each one answers a different swing; the chains between them lengthen when they feel like it. It howls in three voices when it lands.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/KingCerberus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <uiIconPath>Things/Item/Equipment/WeaponMelee/KingCerberus</uiIconPath>
-    <soundInteract>Interact_MeleeWeapon</soundInteract>
+    <soundInteract MayRequire="Ludeon.RimWorld.Royalty">Interact_ZeusHammer</soundInteract>
+    <meleeHitSound MayRequire="Ludeon.RimWorld.Royalty">MeleeHit_ZeusHammer</meleeHitSound>
+    <equippedAngleOffset>-65</equippedAngleOffset>
     <costStuffCount>220</costStuffCount>
     <stuffCategories>
       <li>Metallic</li>
@@ -222,18 +369,10 @@
       <MarketValue>9000</MarketValue>
     </statBases>
     <equippedStatOffsets>
-      <MeleeHitChance>0.15</MeleeHitChance>
-      <MeleeDodgeChance>0.10</MeleeDodgeChance>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
       <PainShockThreshold>0.10</PainShockThreshold>
     </equippedStatOffsets>
-    <weaponTags>
-      <li>MedievalMeleeDecent</li>
-      <li>MedievalMeleeAdvanced</li>
-      <li>DMCWeapon</li>
-    </weaponTags>
-    <weaponClasses>
-      <li>Melee</li>
-    </weaponClasses>
     <tools>
       <li>
         <label>fire head</label>
@@ -243,6 +382,13 @@
         <power>40</power>
         <cooldownTime>2.0</cooldownTime>
         <armorPenetration>0.20</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicFire</def>
+            <amount>12</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
         <label>ice head</label>
@@ -252,6 +398,13 @@
         <power>41</power>
         <cooldownTime>2.2</cooldownTime>
         <armorPenetration>0.15</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicIce</def>
+            <amount>11</amount>
+            <chance>0.40</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
         <label>lightning head</label>
@@ -261,6 +414,13 @@
         <power>48</power>
         <cooldownTime>1.8</cooldownTime>
         <armorPenetration>0.25</armorPenetration>
+        <extraMeleeDamages>
+          <li>
+            <def>DMC_DemonicLightning</def>
+            <amount>13</amount>
+            <chance>0.35</chance>
+          </li>
+        </extraMeleeDamages>
       </li>
       <li>
         <label>chain whip</label>

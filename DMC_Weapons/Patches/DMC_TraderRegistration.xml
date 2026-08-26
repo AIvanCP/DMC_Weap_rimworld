@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  NOTE ON THE ROOT ELEMENT.
+
+  This file's root is <Patch>, not <Defs>. Every patch file this mod previously shipped
+  (NPCEquipment_Removal.xml and the three .disabled files) used <Defs> as the root, which
+  means RimWorld loaded them as def files and tried to construct a def type called
+  "Operation". None of them ever ran. That is why the "player-exclusive" behaviour and the
+  trader stock injection never worked in game.
+
+  Patches only run from a <Patch> root inside a Patches/ folder.
+-->
+<Patch>
+
+  <!--
+    Register the DMC caravan trader with the outlander factions.
+
+    A TraderKindDef with <orbital>false</orbital> is only ever selected for a trade caravan
+    if some FactionDef names it in <caravanTraderKinds>. DMC_LegendaryWeaponCaravan was
+    defined but listed nowhere, so it could not spawn. Its own <commonality>0.08</commonality>
+    keeps it rare relative to the four vanilla outlander caravans.
+
+    TARGET THE ABSTRACT BASE, NOT THE CONCRETE FACTIONS.
+
+    Patches run against the raw XML document, before ParentName inheritance is resolved.
+    OutlanderCivil and OutlanderRough do not declare <caravanTraderKinds> themselves - they
+    inherit it from the abstract FactionDef Name="OutlanderFactionBase" (Core,
+    Factions_Misc.xml line 57). An xpath aimed at the concrete defs therefore matches
+    nothing and the operation fails, which is exactly what happened on the first attempt.
+
+    One operation on the base covers both: OutlanderCivil is a direct child, and
+    OutlanderRough reaches it through OutlanderRoughBase. Neither redeclares the list, so
+    both inherit the added entry.
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/FactionDef[@Name="OutlanderFactionBase"]/caravanTraderKinds</xpath>
+    <value>
+      <li>DMC_LegendaryWeaponCaravan</li>
+    </value>
+  </Operation>
+
+  <!--
+    No NPC-equipment removal patch is needed any more.
+
+    The old one tried to strip a weaponTag called DMCWeapon out of vanilla PawnKindDefs -
+    but no vanilla pawnkind has ever asked for that tag, so even a working version of that
+    patch would have removed nothing. The weapons leaked to raiders because they *also*
+    carried MedievalMeleeDecent / MedievalMeleeAdvanced (melee) and
+    SimpleGun / Pistol / Revolver / Autopistol (ranged), which are precisely the tags
+    mercenary, tribal, Empire, Traders Guild and outlander pawnkinds roll from.
+
+    Those tags are now gone from the weapon defs themselves, which is a stronger guarantee
+    than a patch: there is nothing left to strip.
+  -->
+
+</Patch>

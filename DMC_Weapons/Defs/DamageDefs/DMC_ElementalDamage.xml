@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- DMC Elemental Damage Types -->
-  
-  <!-- Demonic Fire Damage -->
-  <DamageDef>
+  <!--
+    DMC elemental damage types.
+
+    Every def here is wired to a debuff hediff through <additionalHediffs>. Weapons apply them
+    through <extraMeleeDamages> (melee, each with its own <chance>) or through
+    <projectile><extraDamages> (ranged), so an elemental proc is a real second damage instance
+    landing on top of the physical hit - not a cosmetic label.
+  -->
+
+  <!-- ============================ FIRE ============================ -->
+  <!-- Devil Sword Dante, Red Queen (Exceed), Agni, Balrog, King Cerberus fire head -->
+  <DamageDef ParentName="Flame">
     <defName>DMC_DemonicFire</defName>
     <label>demonic fire</label>
     <workerClass>DamageWorker_AddInjury</workerClass>
-    <externalViolence>true</externalViolence>
     <deathMessage>{0} was consumed by demonic flames.</deathMessage>
     <hediff>Burn</hediff>
+    <hediffSkin>Burn</hediffSkin>
     <armorCategory>Heat</armorCategory>
-    <defaultDamage>10</defaultDamage>
-    <defaultArmorPenetration>0.20</defaultArmorPenetration>
+    <defaultDamage>9</defaultDamage>
+    <defaultArmorPenetration>0.25</defaultArmorPenetration>
     <buildingDamageFactor>1.0</buildingDamageFactor>
     <plantDamageFactor>4.0</plantDamageFactor>
-    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
-    <impactSoundType>Slice</impactSoundType>
+    <igniteCellChance>0.15</igniteCellChance>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_DemonicBurn</hediff>
+        <severityFixed>0.18</severityFixed>
+      </li>
+    </additionalHediffs>
   </DamageDef>
 
-  <!-- Demonic Ice/Frost Damage -->
+  <!-- ============================ ICE ============================ -->
+  <!-- King Cerberus ice head -->
   <DamageDef>
     <defName>DMC_DemonicIce</defName>
     <label>demonic ice</label>
@@ -28,16 +42,24 @@
     <externalViolence>true</externalViolence>
     <deathMessage>{0} was frozen solid by demonic ice.</deathMessage>
     <hediff>Frostbite</hediff>
+    <hediffSkin>Frostbite</hediffSkin>
     <armorCategory>Sharp</armorCategory>
-    <defaultDamage>8</defaultDamage>
-    <defaultArmorPenetration>0.15</defaultArmorPenetration>
+    <defaultDamage>7</defaultDamage>
+    <defaultArmorPenetration>0.20</defaultArmorPenetration>
     <buildingDamageFactor>0.8</buildingDamageFactor>
     <plantDamageFactor>2.0</plantDamageFactor>
-    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <impactSoundType>Blunt</impactSoundType>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_DemonicFrost</hediff>
+        <severityFixed>0.22</severityFixed>
+      </li>
+    </additionalHediffs>
   </DamageDef>
 
-  <!-- Demonic Lightning Damage -->
+  <!-- ============================ LIGHTNING ============================ -->
+  <!-- King Cerberus lightning head, Nevan -->
   <DamageDef>
     <defName>DMC_DemonicLightning</defName>
     <label>demonic lightning</label>
@@ -45,13 +67,185 @@
     <externalViolence>true</externalViolence>
     <deathMessage>{0} was electrocuted by supernatural lightning.</deathMessage>
     <hediff>Burn</hediff>
+    <hediffSkin>Burn</hediffSkin>
     <armorCategory>Sharp</armorCategory>
-    <defaultDamage>12</defaultDamage>
-    <defaultArmorPenetration>0.25</defaultArmorPenetration>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.35</defaultArmorPenetration>
     <buildingDamageFactor>1.5</buildingDamageFactor>
     <plantDamageFactor>1.0</plantDamageFactor>
-    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
-    <impactSoundType>Slice</impactSoundType>
+    <impactSoundType>Electric</impactSoundType>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <!-- Real stun, with adaptation so a target cannot be chain-locked forever -->
+    <causeStun>true</causeStun>
+    <constantStunDurationTicks>45</constantStunDurationTicks>
+    <stunAdaptationTicks>1200</stunAdaptationTicks>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_ElectricShock</hediff>
+        <severityFixed>0.20</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- ============================ HOLY LIGHT ============================ -->
+  <!-- Beowulf was the lightbeast blinded by Sparda; his arms blind in turn. -->
+  <DamageDef>
+    <defName>DMC_HolyLight</defName>
+    <label>holy light</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was purged by holy light.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSkin>Burn</hediffSkin>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>8</defaultDamage>
+    <defaultArmorPenetration>0.40</defaultArmorPenetration>
+    <buildingDamageFactor>0.5</buildingDamageFactor>
+    <plantDamageFactor>0.5</plantDamageFactor>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_LightBlind</hediff>
+        <severityFixed>0.30</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- ============================ DIMENSIONAL CUT ============================ -->
+  <!-- Yamato, Mirage Edge, Devil Sword Vergil. A cut that lands before the armor exists. -->
+  <DamageDef ParentName="CutBase">
+    <defName>DMC_DimensionalCut</defName>
+    <label>dimensional cut</label>
+    <deathMessage>{0} was cut apart by a blade that was never there.</deathMessage>
+    <defaultDamage>10</defaultDamage>
+    <!-- Armor penetration above 1 means armor is effectively bypassed -->
+    <defaultArmorPenetration>2.0</defaultArmorPenetration>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_DimensionalWound</hediff>
+        <severityFixed>0.25</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- ============================ WIND ============================ -->
+  <!-- Rudra, god of wind and storms. Wide, sweeping, catches more than one target. -->
+  <DamageDef ParentName="CutBase">
+    <defName>DMC_DemonicWind</defName>
+    <label>demonic wind</label>
+    <deathMessage>{0} was torn apart by a demonic gale.</deathMessage>
+    <defaultDamage>9</defaultDamage>
+    <defaultArmorPenetration>0.35</defaultArmorPenetration>
+    <cutExtraTargetsCurve>
+      <points>
+        <li>0, 0</li>
+        <li>0.4, 1</li>
+        <li>0.7, 2</li>
+        <li>1, 3</li>
+      </points>
+    </cutExtraTargetsCurve>
+    <cutCleaveBonus>2.0</cutCleaveBonus>
+  </DamageDef>
+
+  <!-- ============================ SOUL DRAIN ============================ -->
+  <!-- Nevan is a succubus. Her bats take the vitality, not the flesh. -->
+  <DamageDef>
+    <defName>DMC_SoulDrain</defName>
+    <label>soul drain</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was drained of life.</deathMessage>
+    <hediff>Burn</hediff>
+    <hediffSkin>Burn</hediffSkin>
+    <armorCategory>Sharp</armorCategory>
+    <defaultDamage>4</defaultDamage>
+    <defaultArmorPenetration>0.60</defaultArmorPenetration>
+    <buildingDamageFactor>0.2</buildingDamageFactor>
+    <plantDamageFactor>0.2</plantDamageFactor>
+    <makesBlood>false</makesBlood>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <impactSoundType>Electric</impactSoundType>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_Enervated</hediff>
+        <severityFixed>0.25</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- ============================ SHRED ============================ -->
+  <!-- Cavaliere: two spinning chainsaw wheels. Nothing about this is clean. -->
+  <DamageDef ParentName="CutBase">
+    <defName>DMC_Shred</defName>
+    <label>shred</label>
+    <deathMessage>{0} was ground to pieces.</deathMessage>
+    <defaultDamage>12</defaultDamage>
+    <defaultArmorPenetration>0.30</defaultArmorPenetration>
+    <cutExtraTargetsCurve>
+      <points>
+        <li>0, 0</li>
+        <li>0.5, 1</li>
+        <li>0.8, 2</li>
+        <li>1, 3</li>
+      </points>
+    </cutExtraTargetsCurve>
+    <cutCleaveBonus>2.2</cutCleaveBonus>
+    <additionalHediffs>
+      <li>
+        <hediff>DMC_Shredded</hediff>
+        <severityFixed>0.30</severityFixed>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+
+  <!-- ============================ STAGGER ============================ -->
+  <!--
+    Pure concussive force, no wound: Gilgamesh's impacts and the weight of sustained
+    pistol fire. Inherits Stun (harmsHealth false, DamageWorker_Stun), but pins the
+    duration explicitly instead of letting it scale off the damage amount.
+  -->
+  <DamageDef ParentName="Stun">
+    <defName>DMC_Stagger</defName>
+    <label>stagger</label>
+    <deathMessage>{0} was pounded to death.</deathMessage>
+    <constantStunDurationTicks>40</constantStunDurationTicks>
+    <stunAdaptationTicks>1500</stunAdaptationTicks>
+  </DamageDef>
+
+  <!-- ============================ CHARGED ROUND ============================ -->
+  <!--
+    Blue Rose. Both barrels fire at once and the trailing round strikes the leading one,
+    driving it through instead of past. The result is an overpressure hit that staggers
+    a target rather than a clean perforation.
+
+    This one is used as an explosion damage type (see Bullet_BlueRoseCharged), so it needs
+    isExplosive and the explosion flecks - a plain injury DamageDef renders nothing.
+  -->
+  <DamageDef>
+    <defName>DMC_ChargedRound</defName>
+    <label>charged round</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} was blown apart by a charged round.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSkin>Bruise</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Sharp</armorCategory>
+    <defaultDamage>24</defaultDamage>
+    <defaultArmorPenetration>0.45</defaultArmorPenetration>
+    <buildingDamageFactor>0.6</buildingDamageFactor>
+    <explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.55, 0.7, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.35, 0.5, 0.9)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <!-- "enough force to stagger even the largest demons" -->
+    <causeStun>true</causeStun>
+    <constantStunDurationTicks>30</constantStunDurationTicks>
+    <stunAdaptationTicks>1500</stunAdaptationTicks>
   </DamageDef>
 
 </Defs>

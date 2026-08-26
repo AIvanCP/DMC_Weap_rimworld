@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Base research for DMC weapons -->
+  <!--
+    Three tiers, and they are now actually connected to something.
+
+    Previously these projects unlocked nothing: melee weapons inherit their recipeMaker
+    from BaseMeleeWeapon, which has no researchPrerequisite, so Yamato was craftable at a
+    fueled smithy on day one for 200 steel. Every DMC weapon def now names one of these
+    projects in its own recipeMaker.
+  -->
+
+  <!-- TIER 1: Rebellion, Coyote-A -->
   <ResearchProjectDef>
     <defName>DMC_DemonicArchaeology</defName>
     <label>demonic archaeology</label>
-    <description>Study ancient texts and artifacts that speak of legendary weapons from another realm. These documents describe weapons of incredible power wielded by legendary demon hunters. Understanding their construction principles is the first step toward recreating such legendary armaments.</description>
+    <description>Fragments of a devil arm turn up in a ruin, and the metallurgy makes no sense: an alloy that was never smelted, holding an edge it was never given. Working out how the thing is put together is the first step. It will not tell you how to wake one up - that comes later - but it is enough to build a competent copy of the simpler ones.\n\nUnlocks Rebellion and the Coyote-A.</description>
     <baseCost>4000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -18,11 +27,12 @@
     <researchViewY>4.50</researchViewY>
   </ResearchProjectDef>
 
-  <!-- Research for basic legendary weapons -->
+  <!-- TIER 2: Yamato, Mirage Edge, King Cerberus, Force Edge, Red Queen, Agni & Rudra,
+       Beowulf, Nevan, Blue Rose, Ebony & Ivory, Kalina Ann, Artemis, Spiral -->
   <ResearchProjectDef>
     <defName>DMC_LegendaryWeapons</defName>
     <label>legendary weapon forging</label>
-    <description>Through careful study of demonic essence and advanced metallurgy, you have discovered methods to forge weapons of legendary power. This research unlocks the ability to craft Yamato, Mirage Edge, King Cerberus, and Blue Rose - weapons that exist at the intersection of technology and supernatural power.</description>
+    <description>The alloy is not the interesting part. What matters is that a devil arm is a demon that lost an argument and was folded into a shape - which means the forging process is less metallurgy than it is negotiation. Once you can hold something down long enough to hammer it flat, most of the named arms become reproducible.\n\nUnlocks the bulk of the arsenal, elemental arms included.</description>
     <baseCost>6000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -34,11 +44,11 @@
     <researchViewY>4.50</researchViewY>
   </ResearchProjectDef>
 
-  <!-- Research for ultimate weapons -->
+  <!-- TIER 3: Devil Sword Dante, Devil Sword Vergil, Sparda, Balrog, Gilgamesh, Cavaliere -->
   <ResearchProjectDef>
     <defName>DMC_UltimateWeapons</defName>
     <label>ultimate demon armaments</label>
-    <description>The pinnacle of weapon crafting, combining the deepest understanding of demonic power with master-level engineering. This research grants access to the most powerful weapons ever conceived: the Devil Sword Dante and Ebony &amp; Ivory. Only the most advanced colonies should attempt such dangerous and expensive undertakings.</description>
+    <description>The arms at the top of the list were not forged so much as agreed to. Sparda's own blade, the two devil swords, the king of Fire Hell - each of these was a being of some standing before it was equipment, and building a working copy means reproducing not just the shape but whatever it was that convinced the original to hold still.\n\nUnlocks the devil swords, Sparda, Balrog, Gilgamesh and the Cavaliere.</description>
     <baseCost>8000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>

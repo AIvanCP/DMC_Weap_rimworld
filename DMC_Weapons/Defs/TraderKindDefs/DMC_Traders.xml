@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Ultra-rare weapons trader that occasionally appears -->
+  <!--
+    Both traders stock by tradeTag rather than by listing each weapon, so anything
+    tagged DMCWeapon is picked up automatically - including weapons added later.
+    DMCWeapon is the only tradeTag these weapons carry (see DMC_MeleeWeapons.xml),
+    which is also what keeps them out of ordinary combat suppliers.
+  -->
+
+  <!-- Orbital. Reachable through the vanilla orbital trader incident by commonality. -->
   <TraderKindDef>
     <defName>DMC_LegendaryWeaponDealer</defName>
     <label>legendary weapon collector</label>
@@ -9,39 +16,13 @@
     <requestable>true</requestable>
     <orbital>true</orbital>
     <stockGenerators>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_Yamato</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>15000~25000</totalPriceRange>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMCWeapon</tradeTag>
+        <thingDefCountRange>1~3</thingDefCountRange>
+        <countRange>1~1</countRange>
       </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_DevilSwordDante</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>20000~35000</totalPriceRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_MirageEdge</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>12000~20000</totalPriceRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_BlueRose</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>10000~18000</totalPriceRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_EbonyAndIvory</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>18000~30000</totalPriceRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_KingCerberus</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>15000~25000</totalPriceRange>
-      </li>
-      <!-- Some regular luxury items to make the trader seem more legitimate -->
       <li Class="StockGenerator_Category">
-        <categoryDef>Luxury</categoryDef>
+        <categoryDef>Artifacts</categoryDef>
         <thingDefCountRange>2~4</thingDefCountRange>
         <totalPriceRange>500~2000</totalPriceRange>
       </li>
@@ -50,10 +31,19 @@
         <thingDefCountRange>1~3</thingDefCountRange>
         <totalPriceRange>800~1500</totalPriceRange>
       </li>
+      <!-- A collector buys as well as sells -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>DMCWeapon</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>WeaponMelee</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>WeaponRanged</tag></li>
     </stockGenerators>
   </TraderKindDef>
 
-  <!-- Caravan version as backup -->
+  <!--
+    Caravan version. This def existed before but was unreachable: a TraderKindDef only
+    ever spawns as a caravan if some FactionDef lists it in <caravanTraderKinds>, and
+    nothing did. Patches/DMC_TraderRegistration.xml now registers it with both outlander
+    factions.
+  -->
   <TraderKindDef>
     <defName>DMC_LegendaryWeaponCaravan</defName>
     <label>legendary artifact caravan</label>
@@ -61,22 +51,11 @@
     <requestable>false</requestable>
     <orbital>false</orbital>
     <stockGenerators>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_Yamato</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>12000~20000</totalPriceRange>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMCWeapon</tradeTag>
+        <thingDefCountRange>1~2</thingDefCountRange>
+        <countRange>1~1</countRange>
       </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_BlueRose</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>8000~15000</totalPriceRange>
-      </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>DMC_MirageEdge</thingDef>
-        <countRange>0~1</countRange>
-        <totalPriceRange>10000~18000</totalPriceRange>
-      </li>
-      <!-- Regular goods to make them seem like normal traders -->
       <li Class="StockGenerator_Category">
         <categoryDef>WeaponsRanged</categoryDef>
         <thingDefCountRange>1~3</thingDefCountRange>
@@ -87,6 +66,10 @@
         <thingDefCountRange>2~5</thingDefCountRange>
         <totalPriceRange>200~800</totalPriceRange>
       </li>
+      <!-- A collector buys as well as sells -->
+      <li Class="StockGenerator_BuyTradeTag"><tag>DMCWeapon</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>WeaponMelee</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>WeaponRanged</tag></li>
     </stockGenerators>
   </TraderKindDef>
 

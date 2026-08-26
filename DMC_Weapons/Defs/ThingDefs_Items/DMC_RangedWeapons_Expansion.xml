@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    ============================================================================
+    DEVIL ARMS - FIREARMS, DMC3 / DMC4 / DMC5
+    Base (DMC_RangedWeaponBase) lives in DMC_RangedWeapons.xml.
+    ============================================================================
+  -->
+
+  <!--
+    ===================================================================
+    Coyote-A - Dante / Nero (DMC4 / DMC5)   TIER 1
+    A sawed-off that Nico kept working on until it stopped being a shotgun.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_RangedWeaponBase">
+    <defName>DMC_CoyoteA</defName>
+    <label>Coyote-A</label>
+    <description>A double-barrelled sawed-off with a wooden stock, carried by Dante and later rebuilt by Nico. It has no range worth mentioning and no accuracy to speak of, and neither has ever been the point: at conversational distance it removes whatever is in front of it and knocks down whatever was standing next to that.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/CoyoteA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/CoyoteA</uiIconPath>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <WorkToMake>22000</WorkToMake>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+      <Beauty>8</Beauty>
+      <MarketValue>4500</MarketValue>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <Steel>60</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <weaponClasses>
+      <li>RangedLight</li>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <recipeMaker>
+      <researchPrerequisite>DMC_DemonicArchaeology</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_CoyoteA</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>15.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Kalina Ann - Lady (DMC3 / DMC5)   TIER 2
+    Lady built it, named it after her mother, and pointed it at her father.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_RangedWeaponBase">
+    <defName>DMC_KalinaAnn</defName>
+    <label>Kalina Ann</label>
+    <description>A missile launcher Lady built herself and named after her mother, with a grappling bayonet bolted under the tube because she expected to need both. It is heavier than the person who usually carries it and the warhead does not discriminate about what is standing near the impact point. Lady has lent it to Dante more than once and has always wanted it back.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/KalinaAnn</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.05</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/KalinaAnn</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>52000</WorkToMake>
+      <Mass>9.0</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
+      <RangedWeapon_Cooldown>5.5</RangedWeapon_Cooldown>
+      <Beauty>10</Beauty>
+      <MarketValue>12000</MarketValue>
+    </statBases>
+    <costList>
+      <Plasteel>130</Plasteel>
+      <Steel>150</Steel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+      <Chemfuel>120</Chemfuel>
+    </costList>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+      <li>LongShots</li>
+    </weaponClasses>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_KalinaAnn</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>33.9</range>
+        <forcedMissRadius>1.4</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>16</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grappling bayonet</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>0.35</armorPenetration>
+      </li>
+      <li>
+        <label>tube</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Artemis - Dante (DMC3)   TIER 2
+    A demonic arm cannon. Locks onto several things and fires light at all of them.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_RangedWeaponBase">
+    <defName>DMC_Artemis</defName>
+    <label>Artemis</label>
+    <description>Taken from the Hell Vanguard's armoury and worn over the forearm rather than held. Artemis takes a lock on everything in front of it at once and answers with a spread of light - each bolt is thin, none of them are aimed in any conventional sense, and the target ends up with a great many small holes and no idea which direction to face. Named for a huntress, which the weapon seems to find funny.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Artemis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.95</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/Artemis</uiIconPath>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>4.0</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.82</AccuracyShort>
+      <AccuracyMedium>0.72</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+      <Beauty>14</Beauty>
+      <MarketValue>11000</MarketValue>
+    </statBases>
+    <costList>
+      <Plasteel>110</Plasteel>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Gold>40</Gold>
+      <Uranium>20</Uranium>
+    </costList>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Artemis</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>26.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>housing</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>emitter</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ===================================================================
+    Spiral - Dante (DMC3)   TIER 2
+    A rifle whose rounds do not stop at the first thing they hit.
+    ===================================================================
+  -->
+  <ThingDef ParentName="DMC_RangedWeaponBase">
+    <defName>DMC_Spiral</defName>
+    <label>Spiral</label>
+    <description>A heavy long-barrelled rifle with an oversized optic, firing a spiralling round that keeps its energy after the first impact and rebounds into whatever else is nearby. Slow to bring on target and slower to cycle, but a single shot rarely accounts for a single target.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Spiral</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.05</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/WeaponRanged/Spiral</uiIconPath>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.45</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.88</AccuracyLong>
+      <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+      <Beauty>10</Beauty>
+      <MarketValue>11000</MarketValue>
+    </statBases>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <Steel>80</Steel>
+      <ComponentIndustrial>14</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+      <li>LongShots</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_Spiral</defaultProjectile>
+        <warmupTime>2.6</warmupTime>
+        <range>44.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!--
+    ============================================================================
+    PROJECTILES
+    ============================================================================
+  -->
+
+  <!-- Coyote-A: enormous stopping power, no penetration, no range -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_CoyoteA</defName>
+    <label>Coyote-A shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>26</damageAmountBase>
+      <stoppingPower>3.0</stoppingPower>
+      <armorPenetrationBase>0.20</armorPenetrationBase>
+      <speed>55</speed>
+      <extraDamages>
+        <li>
+          <def>DMC_Stagger</def>
+          <amount>12</amount>
+          <chance>0.35</chance>
+        </li>
+      </extraDamages>
+    </projectile>
+  </ThingDef>
+
+  <!-- Kalina Ann: a real missile, thingClass Projectile_Explosive so it actually detonates -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_KalinaAnn</defName>
+    <label>Kalina Ann missile</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>65</damageAmountBase>
+      <armorPenetrationBase>0.60</armorPenetrationBase>
+      <speed>42</speed>
+      <explosionRadius>2.6</explosionRadius>
+      <explosionDelay>0</explosionDelay>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <flyOverhead>false</flyOverhead>
+      <screenShakeFactor>1.0</screenShakeFactor>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+  </ThingDef>
+
+  <!-- Artemis: thin light bolts, one of which usually catches the eyes -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Artemis</defName>
+    <label>Artemis bolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <speed>100</speed>
+      <extraDamages>
+        <li>
+          <def>DMC_HolyLight</def>
+          <amount>8</amount>
+          <chance>0.35</chance>
+        </li>
+      </extraDamages>
+    </projectile>
+  </ThingDef>
+
+  <!-- Spiral: the round comes back around -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Spiral</defName>
+    <label>Spiral round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>36</damageAmountBase>
+      <stoppingPower>2.0</stoppingPower>
+      <armorPenetrationBase>0.60</armorPenetrationBase>
+      <speed>95</speed>
+      <extraDamages>
+        <li>
+          <def>Bullet</def>
+          <amount>12</amount>
+          <armorPenetration>0.60</armorPenetration>
+          <chance>0.45</chance>
+        </li>
+      </extraDamages>
+    </projectile>
+  </ThingDef>
+
+</Defs>

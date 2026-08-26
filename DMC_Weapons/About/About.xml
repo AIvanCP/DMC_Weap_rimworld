@@ -9,16 +9,36 @@
     <modDependencies />
     <loadAfter />
     <description>
-        Legendary weapons from the Devil May Cry universe have mysteriously appeared on the rim. These ancient artifacts of demonic power are incredibly rare and valuable.
+        Twenty-one devil arms from Devil May Cry 3, 4 and 5, dragged onto the rim. No DLL, no Harmony - every effect below is stock RimWorld XML.
 
-        Features:
-        • 6 Legendary DMC weapons: Yamato, Blue Rose, Mirage Edge, Devil Sword Dante, Ebony &amp; Ivory, and King Cerberus
-        • Extremely rare - only available through special quests and high-end traders
-        • Lore-accurate stats and descriptions
-        • Player-exclusive weapons (no NPCs will spawn with these)
-        • Expensive crafting requirements and research
+        THE ARSENAL
 
-        These weapons are designed to be end-game content for veteran players seeking the ultimate arsenal.
+        Devil swords: Rebellion, Force Edge, Sparda, Yamato, Mirage Edge, Devil Sword Dante, Devil Sword Vergil, Red Queen, Agni &amp; Rudra, Nevan
+        Gauntlets: Beowulf, Balrog, Gilgamesh, King Cerberus
+        Heavy: Cavaliere
+        Firearms: Ebony &amp; Ivory, Blue Rose, Coyote-A, Kalina Ann, Artemis, Spiral
+
+        EVERY WEAPON DOES SOMETHING
+
+        Elemental hits are real damage instances with their own chance to land, each carrying a debuff that sticks to the target:
+
+        • Demonic fire (Red Queen, Balrog, Devil Sword Dante, Agni, Sparda) - burns that keep burning, and can set the ground alight
+        • Demonic ice (King Cerberus) - slows movement and stiffens the hands
+        • Demonic lightning (King Cerberus, Nevan) - a real stun, with adaptation so it cannot be chain-locked
+        • Holy light (Beowulf, Sparda, Force Edge, Artemis) - sears the eyes; the target cannot aim
+        • Dimensional cut (Yamato, Mirage Edge, Devil Sword Vergil) - bypasses armour outright and opens a wound that will not clot
+        • Demonic wind (Rudra) - wide sweeps that catch several targets at once
+        • Soul drain (Nevan) - takes the strength, leaves the body
+        • Shred (Cavaliere) - heavy bleeding that needs tending
+        • Stagger (Gilgamesh, Coyote-A, Ebony &amp; Ivory, Blue Rose) - concussive force, no wound
+
+        Yamato, Mirage Edge, Rebellion and Devil Sword Vergil also land a much harder hit on a target that has not noticed the attacker.
+
+        ACQUISITION
+
+        Three research tiers gate the whole arsenal, and every weapon's crafting recipe is actually locked behind one of them. Otherwise: a legendary weapon collector who arrives by orbital ship or with an outlander caravan, or as a quest reward.
+
+        No raider, mercenary, tribal or Empire pawn will ever spawn carrying one of these.
     </description>
     <url />
     <packageId>AIvanCP.DMCWeapons</packageId>

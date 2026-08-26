@@ -1,76 +1,85 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- DMC Weapon Special Effects Hediffs -->
-  
-  <!-- Demonic Burn (stronger than normal burn) -->
-  <HediffDef>
+  <!--
+    Debuffs applied by DMC elemental damage. Each one is referenced from a DamageDef's
+    <additionalHediffs>, so it lands automatically whenever that damage type connects.
+
+    All of them decay on their own (HediffCompProperties_SeverityPerDay with a negative rate)
+    and none of them are permanent - they are combat debuffs, not injuries.
+  -->
+
+  <!-- Abstract base: everything here is a temporary, self-clearing combat debuff -->
+  <HediffDef Name="DMC_CombatDebuffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+  </HediffDef>
+
+  <!-- ============================ DMC_DemonicFire ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
     <defName>DMC_DemonicBurn</defName>
     <label>demonic burn</label>
-    <description>This character is burning with supernatural demonic flames that are extremely difficult to extinguish. The fire seems to burn with unholy intensity.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <description>Flesh set alight by hellfire. Ordinary flame goes out; this does not. It keeps eating until it has nothing left to eat.</description>
     <defaultLabelColor>(1, 0.5, 0.3)</defaultLabelColor>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
     <tendable>true</tendable>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.5</severityPerDay>
+        <severityPerDay>-1.6</severityPerDay>
       </li>
       <li Class="HediffCompProperties_TendDuration">
-        <severityPerDayTended>-2.0</severityPerDayTended>
+        <severityPerDayTended>-4.0</severityPerDayTended>
+        <baseTendDurationHours>4</baseTendDurationHours>
       </li>
     </comps>
     <stages>
       <li>
-        <label>minor</label>
+        <label>smouldering</label>
         <minSeverity>0.01</minSeverity>
-        <painOffset>0.1</painOffset>
+        <painOffset>0.10</painOffset>
         <restFallFactorOffset>0.1</restFallFactorOffset>
       </li>
       <li>
-        <label>moderate</label>
-        <minSeverity>0.25</minSeverity>
-        <painOffset>0.2</painOffset>
+        <label>burning</label>
+        <minSeverity>0.35</minSeverity>
+        <painOffset>0.22</painOffset>
         <restFallFactorOffset>0.2</restFallFactorOffset>
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-0.1</offset>
+            <offset>-0.10</offset>
           </li>
         </capMods>
       </li>
       <li>
-        <label>severe</label>
-        <minSeverity>0.5</minSeverity>
-        <painOffset>0.4</painOffset>
+        <label>immolated</label>
+        <minSeverity>0.70</minSeverity>
+        <painOffset>0.40</painOffset>
         <restFallFactorOffset>0.3</restFallFactorOffset>
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-0.2</offset>
+            <offset>-0.20</offset>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <offset>-0.1</offset>
+            <offset>-0.15</offset>
           </li>
         </capMods>
       </li>
     </stages>
   </HediffDef>
 
-  <!-- Demonic Frost (slowing and weakening effect) -->
-  <HediffDef>
+  <!-- ============================ DMC_DemonicIce ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
     <defName>DMC_DemonicFrost</defName>
     <label>demonic frost</label>
-    <description>This character is afflicted with supernatural cold that chills them to the bone. Their movements are slowed and their strength sapped by the demonic ice.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <description>Cold that ignores the weather. The joints stiffen first, then the hands stop answering.</description>
     <defaultLabelColor>(0.5, 0.8, 1)</defaultLabelColor>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.8</severityPerDay>
+        <severityPerDay>-2.0</severityPerDay>
       </li>
     </comps>
     <stages>
@@ -84,40 +93,169 @@
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <offset>-0.1</offset>
+            <offset>-0.10</offset>
           </li>
         </capMods>
       </li>
       <li>
         <label>frozen</label>
-        <minSeverity>0.5</minSeverity>
+        <minSeverity>0.55</minSeverity>
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-0.3</offset>
+            <offset>-0.35</offset>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <offset>-0.2</offset>
+            <offset>-0.25</offset>
           </li>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>-0.1</offset>
+            <offset>-0.10</offset>
           </li>
         </capMods>
       </li>
     </stages>
   </HediffDef>
 
-  <!-- Electric Shock with EMP effect -->
-  <HediffDef>
+  <!-- ============================ DMC_DemonicLightning ============================ -->
+  <!-- The hard stun comes from the DamageDef itself (causeStun). This is the lingering part. -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
     <defName>DMC_ElectricShock</defName>
     <label>electric shock</label>
-    <description>This character has been struck by supernatural lightning. Their nervous system is disrupted, causing spasms and temporary paralysis.</description>
-    <hediffClass>HediffWithComps</hediffClass>
+    <description>Nerves still firing out of order after a supernatural charge went through them. Aim wanders, hands shake.</description>
     <defaultLabelColor>(1, 1, 0.3)</defaultLabelColor>
-    <scenarioCanAdd>true</scenarioCanAdd>
-    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>jolted</label>
+        <minSeverity>0.01</minSeverity>
+        <statOffsets>
+          <ShootingAccuracyPawn>-2.5</ShootingAccuracyPawn>
+          <MeleeHitChance>-2.0</MeleeHitChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>convulsing</label>
+        <minSeverity>0.55</minSeverity>
+        <statOffsets>
+          <ShootingAccuracyPawn>-5.0</ShootingAccuracyPawn>
+          <MeleeHitChance>-4.0</MeleeHitChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================ DMC_HolyLight ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
+    <defName>DMC_LightBlind</defName>
+    <label>seared sight</label>
+    <description>Beowulf's light burned itself onto the back of the eyes. Everything is a white smear until it fades.</description>
+    <defaultLabelColor>(1, 0.95, 0.7)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>dazzled</label>
+        <minSeverity>0.01</minSeverity>
+        <statOffsets>
+          <ShootingAccuracyPawn>-4.0</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>blinded</label>
+        <minSeverity>0.60</minSeverity>
+        <statOffsets>
+          <ShootingAccuracyPawn>-5.0</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.65</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================ DMC_DimensionalCut ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
+    <defName>DMC_DimensionalWound</defName>
+    <label>dimensional wound</label>
+    <description>A cut whose edges are not in the same place as each other. It will not close, because there is nothing there to close.</description>
+    <defaultLabelColor>(0.55, 0.6, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.2</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>split</label>
+        <minSeverity>0.01</minSeverity>
+        <painOffset>0.12</painOffset>
+        <totalBleedFactor>1.5</totalBleedFactor>
+        <naturalHealingFactor>0.5</naturalHealingFactor>
+      </li>
+      <li>
+        <label>severed</label>
+        <minSeverity>0.55</minSeverity>
+        <painOffset>0.25</painOffset>
+        <totalBleedFactor>2.2</totalBleedFactor>
+        <naturalHealingFactor>0.25</naturalHealingFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================ DMC_SoulDrain ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
+    <defName>DMC_Enervated</defName>
+    <label>enervated</label>
+    <description>Something took the strength out and did not give it back. The body is intact; there is simply nothing left driving it.</description>
+    <defaultLabelColor>(0.7, 0.4, 0.9)</defaultLabelColor>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-1.5</severityPerDay>
@@ -125,44 +263,94 @@
     </comps>
     <stages>
       <li>
-        <label>stunned</label>
+        <label>drained</label>
         <minSeverity>0.01</minSeverity>
+        <restFallFactorOffset>0.5</restFallFactorOffset>
+        <!-- MeleeDPS is a display stat computed from the equipped verb, so a factor on it
+             changes the tooltip and nothing else. These two are read during combat. -->
+        <statOffsets>
+          <MeleeHitChance>-3.0</MeleeHitChance>
+          <ShootingAccuracyPawn>-3.0</ShootingAccuracyPawn>
+        </statOffsets>
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>-0.2</offset>
-          </li>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>-0.25</offset>
+            <offset>-0.15</offset>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <offset>-0.2</offset>
+            <offset>-0.15</offset>
           </li>
         </capMods>
-        <mentalStateGivers>
-          <li>
-            <mentalState>Berserk</mentalState>
-            <mtbDays>30</mtbDays>
-          </li>
-        </mentalStateGivers>
       </li>
       <li>
-        <label>paralyzed</label>
-        <minSeverity>0.5</minSeverity>
+        <label>hollowed</label>
+        <minSeverity>0.60</minSeverity>
+        <restFallFactorOffset>1.0</restFallFactorOffset>
+        <statOffsets>
+          <MeleeHitChance>-6.0</MeleeHitChance>
+          <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+        </statOffsets>
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <offset>-0.4</offset>
-          </li>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>-0.5</offset>
+            <offset>-0.30</offset>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <offset>-0.4</offset>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ============================ DMC_Shred ============================ -->
+  <HediffDef ParentName="DMC_CombatDebuffBase">
+    <defName>DMC_Shredded</defName>
+    <label>shredded</label>
+    <description>Torn open by something that was spinning at the time. Bleeds badly and will not stop on its own.</description>
+    <defaultLabelColor>(0.85, 0.15, 0.15)</defaultLabelColor>
+    <tendable>true</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_TendDuration">
+        <severityPerDayTended>-3.0</severityPerDayTended>
+        <baseTendDurationHours>4</baseTendDurationHours>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>torn</label>
+        <minSeverity>0.01</minSeverity>
+        <painOffset>0.18</painOffset>
+        <totalBleedFactor>1.8</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>mangled</label>
+        <minSeverity>0.60</minSeverity>
+        <painOffset>0.35</painOffset>
+        <totalBleedFactor>2.6</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.20</offset>
           </li>
         </capMods>
       </li>
